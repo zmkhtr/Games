@@ -23,6 +23,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20212F3929A51662000000F5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2045F90C29A46A0E009E17B5 /* Games.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Games.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2045F91629A46A0E009E17B5 /* GamesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GamesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2045F91B29A46A0E009E17B5 /* GamesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesTests.swift; sourceTree = "<group>"; };
@@ -51,6 +52,7 @@
 		2045F90229A46A0E009E17B5 = {
 			isa = PBXGroup;
 			children = (
+				20212F3929A51662000000F5 /* README.md */,
 				2045F90E29A46A0E009E17B5 /* Games */,
 				2045F91A29A46A0E009E17B5 /* GamesTests */,
 				2045F90D29A46A0E009E17B5 /* Products */,
