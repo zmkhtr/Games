@@ -1,4 +1,4 @@
-# Games List Feature Specs
+# Games Feature Specs
 
 ```http
   BASE_URL:  https://api.rawg.io/
