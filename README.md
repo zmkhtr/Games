@@ -4,7 +4,7 @@
   BASE_URL:  https://api.rawg.io/
 ```
 
-[Documentation](https://rawg.io/apidocs)
+[API Documentation](https://rawg.io/apidocs)
 
 ## Use Cases
 
