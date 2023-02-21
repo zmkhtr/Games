@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2045F91129A46A0E009E17B5 /* Games.docc in Sources */ = {isa = PBXBuildFile; fileRef = 2045F91029A46A0E009E17B5 /* Games.docc */; };
 		2045F91729A46A0E009E17B5 /* Games.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2045F90C29A46A0E009E17B5 /* Games.framework */; };
 		2045F91C29A46A0E009E17B5 /* GamesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2045F91B29A46A0E009E17B5 /* GamesTests.swift */; };
-		2045F91D29A46A0E009E17B5 /* Games.h in Headers */ = {isa = PBXBuildFile; fileRef = 2045F90F29A46A0E009E17B5 /* Games.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,8 +23,6 @@
 
 /* Begin PBXFileReference section */
 		2045F90C29A46A0E009E17B5 /* Games.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Games.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2045F90F29A46A0E009E17B5 /* Games.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Games.h; sourceTree = "<group>"; };
-		2045F91029A46A0E009E17B5 /* Games.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Games.docc; sourceTree = "<group>"; };
 		2045F91629A46A0E009E17B5 /* GamesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GamesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2045F91B29A46A0E009E17B5 /* GamesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,8 +67,6 @@
 		2045F90E29A46A0E009E17B5 /* Games */ = {
 			isa = PBXGroup;
 			children = (
-				2045F90F29A46A0E009E17B5 /* Games.h */,
-				2045F91029A46A0E009E17B5 /* Games.docc */,
 			);
 			path = Games;
 			sourceTree = "<group>";
@@ -92,7 +86,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2045F91D29A46A0E009E17B5 /* Games.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +140,7 @@
 				TargetAttributes = {
 					2045F90B29A46A0E009E17B5 = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 					};
 					2045F91529A46A0E009E17B5 = {
 						CreatedOnToolsVersion = 14.2;
@@ -194,7 +188,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2045F91129A46A0E009E17B5 /* Games.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +328,7 @@
 		2045F92129A46A0E009E17B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -362,6 +356,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -370,6 +365,7 @@
 		2045F92229A46A0E009E17B5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
