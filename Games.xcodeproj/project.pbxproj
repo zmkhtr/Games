@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20212F3C29A5BF0D000000F5 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20212F3B29A5BF0D000000F5 /* HTTPClient.swift */; };
+		20212F3E29A5BF4B000000F5 /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20212F3D29A5BF4B000000F5 /* URLSessionHTTPClientTests.swift */; };
+		20212F4029A5BF6E000000F5 /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20212F3F29A5BF6E000000F5 /* URLProtocolStub.swift */; };
+		20212F4229A5BFA5000000F5 /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20212F4129A5BFA5000000F5 /* XCTestCase+Extension.swift */; };
+		20212F4429A5BFF1000000F5 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20212F4329A5BFF1000000F5 /* URLSessionHTTPClient.swift */; };
 		2045F91729A46A0E009E17B5 /* Games.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2045F90C29A46A0E009E17B5 /* Games.framework */; };
-		2045F91C29A46A0E009E17B5 /* GamesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2045F91B29A46A0E009E17B5 /* GamesTests.swift */; };
-		2045F92929A46C93009E17B5 /* Games.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2045F92829A46C93009E17B5 /* Games.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,10 +27,13 @@
 
 /* Begin PBXFileReference section */
 		20212F3929A51662000000F5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		20212F3B29A5BF0D000000F5 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		20212F3D29A5BF4B000000F5 /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
+		20212F3F29A5BF6E000000F5 /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
+		20212F4129A5BFA5000000F5 /* XCTestCase+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extension.swift"; sourceTree = "<group>"; };
+		20212F4329A5BFF1000000F5 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		2045F90C29A46A0E009E17B5 /* Games.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Games.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2045F91629A46A0E009E17B5 /* GamesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GamesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2045F91B29A46A0E009E17B5 /* GamesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesTests.swift; sourceTree = "<group>"; };
-		2045F92829A46C93009E17B5 /* Games.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Games.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +55,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20212F3A29A5BEFA000000F5 /* HTTPClient */ = {
+			isa = PBXGroup;
+			children = (
+				20212F3B29A5BF0D000000F5 /* HTTPClient.swift */,
+				20212F4329A5BFF1000000F5 /* URLSessionHTTPClient.swift */,
+			);
+			path = HTTPClient;
+			sourceTree = "<group>";
+		};
+		20212F4529A5C0D7000000F5 /* HTTP Client Tests */ = {
+			isa = PBXGroup;
+			children = (
+				20212F3D29A5BF4B000000F5 /* URLSessionHTTPClientTests.swift */,
+				20212F3F29A5BF6E000000F5 /* URLProtocolStub.swift */,
+			);
+			path = "HTTP Client Tests";
+			sourceTree = "<group>";
+		};
+		20212F4629A5C0FE000000F5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				20212F4129A5BFA5000000F5 /* XCTestCase+Extension.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		2045F90229A46A0E009E17B5 = {
 			isa = PBXGroup;
 			children = (
@@ -71,7 +103,7 @@
 		2045F90E29A46A0E009E17B5 /* Games */ = {
 			isa = PBXGroup;
 			children = (
-				2045F92829A46C93009E17B5 /* Games.swift */,
+				20212F3A29A5BEFA000000F5 /* HTTPClient */,
 			);
 			path = Games;
 			sourceTree = "<group>";
@@ -79,7 +111,8 @@
 		2045F91A29A46A0E009E17B5 /* GamesTests */ = {
 			isa = PBXGroup;
 			children = (
-				2045F91B29A46A0E009E17B5 /* GamesTests.swift */,
+				20212F4629A5C0FE000000F5 /* Helpers */,
+				20212F4529A5C0D7000000F5 /* HTTP Client Tests */,
 			);
 			path = GamesTests;
 			sourceTree = "<group>";
@@ -193,7 +226,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2045F92929A46C93009E17B5 /* Games.swift in Sources */,
+				20212F3C29A5BF0D000000F5 /* HTTPClient.swift in Sources */,
+				20212F4429A5BFF1000000F5 /* URLSessionHTTPClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +235,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2045F91C29A46A0E009E17B5 /* GamesTests.swift in Sources */,
+				20212F4229A5BFA5000000F5 /* XCTestCase+Extension.swift in Sources */,
+				20212F3E29A5BF4B000000F5 /* URLSessionHTTPClientTests.swift in Sources */,
+				20212F4029A5BF6E000000F5 /* URLProtocolStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
