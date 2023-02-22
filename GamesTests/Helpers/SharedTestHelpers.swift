@@ -12,6 +12,10 @@ func anyURL() -> URL {
     return URL(string: "http://any-url.com")!
 }
 
+func anyNSError() -> NSError {
+    return NSError(domain: "any error", code: 0)
+}
+
 func makeItemsJSON(_ items: [[String: Any]]) -> Data {
     let json = ["results": items]
     return try! JSONSerialization.data(withJSONObject: json)
