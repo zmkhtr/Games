@@ -139,14 +139,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		20212F4829A5C36B000000F5 /* Games Feature */ = {
+		20212F4829A5C36B000000F5 /* Games Module */ = {
 			isa = PBXGroup;
 			children = (
 				20212F5229A5CBD3000000F5 /* Games API */,
 				20212F4929A5C3B7000000F5 /* GamesLoader.swift */,
 				20212F4B29A5C430000000F5 /* GameItem.swift */,
 			);
-			path = "Games Feature";
+			path = "Games Module";
 			sourceTree = "<group>";
 		};
 		20212F4D29A5C54E000000F5 /* Games API */ = {
@@ -169,7 +169,7 @@
 			path = "Games API";
 			sourceTree = "<group>";
 		};
-		20212F6929A5FAC3000000F5 /* Game Detail Feature */ = {
+		20212F6929A5FAC3000000F5 /* Game Detail Module */ = {
 			isa = PBXGroup;
 			children = (
 				20212F7E29A615AA000000F5 /* Game Detail Cache */,
@@ -178,7 +178,7 @@
 				20212F6B29A5FADF000000F5 /* GameDetailLoader.swift */,
 				20212F6D29A5FAE9000000F5 /* GameDetailItem.swift */,
 			);
-			path = "Game Detail Feature";
+			path = "Game Detail Module";
 			sourceTree = "<group>";
 		};
 		20212F7029A5FD5B000000F5 /* Game Detail API */ = {
@@ -254,8 +254,8 @@
 		2045F90E29A46A0E009E17B5 /* Games */ = {
 			isa = PBXGroup;
 			children = (
-				20212F6929A5FAC3000000F5 /* Game Detail Feature */,
-				20212F4829A5C36B000000F5 /* Games Feature */,
+				20212F6929A5FAC3000000F5 /* Game Detail Module */,
+				20212F4829A5C36B000000F5 /* Games Module */,
 				20212F3A29A5BEFA000000F5 /* HTTPClient */,
 			);
 			path = Games;
