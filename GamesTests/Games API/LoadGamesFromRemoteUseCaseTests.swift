@@ -152,5 +152,19 @@ class LoadGamesFromRemoteUseCaseTests: XCTestCase {
     private func createRequest(query: String? = nil) -> GamesRequest {
         return GamesRequest(page: 1, page_size: 10, search: query)
     }
+    
+    private func makeItem(id: Int, title: String, releaseDate: String, rating: Double, image: URL) -> (model: GameItem, json: [String: Any]) {
+        let item = GameItem(id: id, title: title, releaseDate: releaseDate, rating: rating, image: image)
+        
+        let json = [
+            "id": id,
+            "name": "\(title)",
+            "released": "\(releaseDate)",
+            "rating": rating,
+            "background_image": "\(image.absoluteString)"
+        ].compactMapValues { $0 }
+        
+        return (item, json)
+    }
 }
 
