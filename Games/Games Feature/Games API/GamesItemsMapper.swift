@@ -32,13 +32,9 @@ public final class GamesItemsMapper {
         }
     }
     
-    public enum Error: Swift.Error {
-        case invalidData
-    }
-    
     public static func map(_ data: Data, from response: HTTPURLResponse) throws -> [GameItem] {
         guard response.statusCode == 200, let root = try? JSONDecoder().decode(Root.self, from: data) else {
-            throw Error.invalidData
+            throw RemoteGamesLoader.Error.invalidData
         }
         
         
