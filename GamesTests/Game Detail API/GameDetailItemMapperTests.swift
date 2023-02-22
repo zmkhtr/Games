@@ -30,12 +30,12 @@ class GameDetailItemsMapperTests: XCTestCase {
     }
     
     func test_map_deliversItemsOn200HTTPResponseWithJSONItems() throws {
-        let item1 = makeItem(id: 2342, title: "GTA", releaseDate: "2013-09-17", rating: 3.5, image: anyURL(), description: "any description", played: 93, developer: "Rockstart", isFavorite: false)
+        let item = makeItem(id: 2342, title: "GTA", releaseDate: "2013-09-17", rating: 3.5, image: anyURL(), description: "any description", played: 93, developer: "Rockstart", isFavorite: false)
         
         
-        let result = try GameDetailItemsMapper.map(item1.data, from: HTTPURLResponse(statusCode: 200))
+        let result = try GameDetailItemsMapper.map(item.data, from: HTTPURLResponse(statusCode: 200))
         
-        XCTAssertEqual(result, item1.model)
+        XCTAssertEqual(result, item.model)
     }
 
     
