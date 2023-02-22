@@ -22,6 +22,8 @@
 		20212F5E29A5D4CC000000F5 /* LoadGamesFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20212F5D29A5D4CC000000F5 /* LoadGamesFromRemoteUseCaseTests.swift */; };
 		20212F6129A5D8B8000000F5 /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20212F6029A5D8B8000000F5 /* HTTPClientSpy.swift */; };
 		20212F6829A5F85A000000F5 /* RemoteGamesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20212F6729A5F85A000000F5 /* RemoteGamesLoader.swift */; };
+		20212F6C29A5FADF000000F5 /* GameDetailLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20212F6B29A5FADF000000F5 /* GameDetailLoader.swift */; };
+		20212F6E29A5FAE9000000F5 /* GameDetailItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20212F6D29A5FAE9000000F5 /* GameDetailItem.swift */; };
 		2045F91729A46A0E009E17B5 /* Games.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2045F90C29A46A0E009E17B5 /* Games.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +54,8 @@
 		20212F5D29A5D4CC000000F5 /* LoadGamesFromRemoteUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadGamesFromRemoteUseCaseTests.swift; sourceTree = "<group>"; };
 		20212F6029A5D8B8000000F5 /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
 		20212F6729A5F85A000000F5 /* RemoteGamesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGamesLoader.swift; sourceTree = "<group>"; };
+		20212F6B29A5FADF000000F5 /* GameDetailLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailLoader.swift; sourceTree = "<group>"; };
+		20212F6D29A5FAE9000000F5 /* GameDetailItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailItem.swift; sourceTree = "<group>"; };
 		2045F90C29A46A0E009E17B5 /* Games.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Games.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2045F91629A46A0E009E17B5 /* GamesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GamesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -133,6 +137,15 @@
 			path = "Games API";
 			sourceTree = "<group>";
 		};
+		20212F6929A5FAC3000000F5 /* Games Detail Feature */ = {
+			isa = PBXGroup;
+			children = (
+				20212F6B29A5FADF000000F5 /* GameDetailLoader.swift */,
+				20212F6D29A5FAE9000000F5 /* GameDetailItem.swift */,
+			);
+			path = "Games Detail Feature";
+			sourceTree = "<group>";
+		};
 		2045F90229A46A0E009E17B5 = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +168,7 @@
 		2045F90E29A46A0E009E17B5 /* Games */ = {
 			isa = PBXGroup;
 			children = (
+				20212F6929A5FAC3000000F5 /* Games Detail Feature */,
 				20212F4829A5C36B000000F5 /* Games Feature */,
 				20212F3A29A5BEFA000000F5 /* HTTPClient */,
 			);
@@ -281,6 +295,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				20212F6829A5F85A000000F5 /* RemoteGamesLoader.swift in Sources */,
+				20212F6C29A5FADF000000F5 /* GameDetailLoader.swift in Sources */,
+				20212F6E29A5FAE9000000F5 /* GameDetailItem.swift in Sources */,
 				20212F3C29A5BF0D000000F5 /* HTTPClient.swift in Sources */,
 				20212F4429A5BFF1000000F5 /* URLSessionHTTPClient.swift in Sources */,
 				20212F5429A5CBE0000000F5 /* GamesEndpoint.swift in Sources */,
