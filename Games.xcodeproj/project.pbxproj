@@ -155,8 +155,8 @@
 		2045F91A29A46A0E009E17B5 /* GamesTests */ = {
 			isa = PBXGroup;
 			children = (
-				20212F4D29A5C54E000000F5 /* Games API */,
 				20212F4629A5C0FE000000F5 /* Helpers */,
+				20212F4D29A5C54E000000F5 /* Games API */,
 				20212F4529A5C0D7000000F5 /* HTTP Client Tests */,
 			);
 			path = GamesTests;
