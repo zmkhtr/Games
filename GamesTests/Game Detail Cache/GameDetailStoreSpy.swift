@@ -1,5 +1,5 @@
 //
-//  GameDataStoreSpy.swift
+//  GameDetailStoreSPy.swift
 //  GamesTests
 //
 //  Created by Azam Mukhtar on 22/02/23.
@@ -8,7 +8,7 @@
 import Foundation
 import Games
 
-class GameDataStoreSpy: GameDetailStore {
+class GameDetailStoreSpy: GameDetailStore {
 
     enum Message: Equatable {
         case insert(game: GameDetailItem, for: Int)

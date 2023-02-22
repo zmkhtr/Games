@@ -53,7 +53,7 @@ class LoadImageDataFromCacheUseCaseTests: XCTestCase {
 
 
     func test_loadImageDataFromURL_doesNotDeliverResultAfterSUTInstanceHasBeenDeallocated() {
-        let store = GameDataStoreSpy()
+        let store = GameDetailStoreSpy()
         var sut: LocalGameDetailLoader? = LocalGameDetailLoader(store: store)
 
         var received = [GameDetailLoader.Result]()
@@ -67,8 +67,8 @@ class LoadImageDataFromCacheUseCaseTests: XCTestCase {
     
     // MARK: - Helpers
     
-    private func makeSUT(currentDate: @escaping () -> Date = Date.init, file: StaticString = #filePath, line: UInt = #line) -> (sut: LocalGameDetailLoader, store: GameDataStoreSpy) {
-        let store = GameDataStoreSpy()
+    private func makeSUT(currentDate: @escaping () -> Date = Date.init, file: StaticString = #filePath, line: UInt = #line) -> (sut: LocalGameDetailLoader, store: GameDetailStoreSpy) {
+        let store = GameDetailStoreSpy()
         let sut = LocalGameDetailLoader(store: store)
         trackForMemoryLeaks(store, file: file, line: line)
         trackForMemoryLeaks(sut, file: file, line: line)
