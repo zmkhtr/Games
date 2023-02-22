@@ -1,5 +1,5 @@
 //
-//  LoadGamesFromRemoteUseCaseTests.swift
+//  LoadGamesDetailFromRemoteUseCaseTests.swift
 //  GamesTests
 //
 //  Created by Azam Mukhtar on 22/02/23.
@@ -8,7 +8,7 @@
 import XCTest
 import Games
 
-class LoadGamesFromRemoteUseCaseTests: XCTestCase {
+class LoadGamesDetailFromRemoteUseCaseTests: XCTestCase {
 
     func test_init_doesNotRequestDataFromURL() {
         let (_, client) = makeSUT()
@@ -17,25 +17,25 @@ class LoadGamesFromRemoteUseCaseTests: XCTestCase {
     }
     
     func test_load_requestDataFromURL() {
-        let request = createRequest()
+        let id = 2394
         let url = anyURL()
         let (sut, client) = makeSUT(url: url)
 
-        sut.load(request: request) {_ in }
-        let enrichURL = enrich(url, with: request)
+        sut.get(for: id) {_ in }
+        let enrichURL = enrich(url, with: id)
 
         XCTAssertEqual(client.requestedURLs, [enrichURL])
     }
 
     func test_load_requestDataFromURLTwice() {
-        let request = createRequest()
+        let id = 2394
         let url = anyURL()
         let (sut, client) = makeSUT(url: url)
+        
+        sut.get(for: id) {_ in }
+        sut.get(for: id) {_ in }
 
-        sut.load(request: request) {_ in }
-        sut.load(request: request) {_ in }
-
-        let enrichURL = enrich(url, with: request)
+        let enrichURL = enrich(url, with: id)
         XCTAssertEqual(client.requestedURLs, [enrichURL, enrichURL])
     }
 
@@ -69,39 +69,26 @@ class LoadGamesFromRemoteUseCaseTests: XCTestCase {
             client.complete(withStatusCode: 200, data: invalidJSON)
         })
     }
-
-    func test_load_deliversNoItemsOn200HTTPResponseWithEmptyJSONList() {
-        let (sut, client) = makeSUT()
-
-        expect(sut, toCompleteWith: .success([]), when: {
-            let emptyListJSON = makeItemsJSON([])
-            client.complete(withStatusCode: 200, data: emptyListJSON)
-        })
-    }
-
+    
     func test_load_deliversItemsOn200HTTPResponseWithJSONItems(){
         let (sut, client) = makeSUT()
+        
+        let item = makeItem(id: 2342, title: "GTA", releaseDate: "2013-09-17", rating: 3.5, image: anyURL(), description: "any description", played: 93, developer: "Rockstart", isFavorite: false)
 
-        let item1 = makeItem(id: 2343, title: "GTA", releaseDate: "2013-09-17", rating: 4.7, image: anyURL())
-        let item2 = makeItem(id: 8345, title: "The Witcher", releaseDate: "2010-02-17", rating: 4.9, image: anyURL())
 
-        let items = [item1.model, item2.model]
-
-        expect(sut, toCompleteWith: .success(items), when: {
-            let json = makeItemsJSON([item1.json, item2.json])
-            client.complete(withStatusCode: 200, data: json)
+        expect(sut, toCompleteWith: .success(item.model), when: {
+            client.complete(withStatusCode: 200, data: item.data)
         })
     }
-
 
     func test_load_doesNotDeliverResultAfterSUTInstanceHasBeenDeallocated() {
         let url = URL(string: "https://any-url.com")!
         let client = HTTPClientSpy()
-        var sut: RemoteGamesLoader? = RemoteGamesLoader(url: url, client: client)
+        var sut: RemoteGameDetailLoader? = RemoteGameDetailLoader(url: url, client: client)
 
 
-        var capturedResults = [RemoteGamesLoader.Result]()
-        sut?.load(request: createRequest()) { capturedResults.append($0) }
+        var capturedResults = [RemoteGameDetailLoader.Result]()
+        sut?.get(for: 1234) { capturedResults.append($0) }
 
         sut = nil
         client.complete(withStatusCode: 200, data: makeItemsJSON([]))
@@ -111,31 +98,31 @@ class LoadGamesFromRemoteUseCaseTests: XCTestCase {
     
     // - MARK: Helpers
     
-    private func makeSUT(url: URL = URL(string: "https://a-url.com")!, file: StaticString = #filePath, line: UInt = #line) -> (sut: RemoteGamesLoader, client: HTTPClientSpy) {
+    private func makeSUT(url: URL = URL(string: "https://a-url.com")!, file: StaticString = #filePath, line: UInt = #line) -> (sut: RemoteGameDetailLoader, client: HTTPClientSpy) {
         let client = HTTPClientSpy()
-        let sut = RemoteGamesLoader(url: url, client: client)
+        let sut = RemoteGameDetailLoader(url: url, client: client)
         trackForMemoryLeaks(sut, file: file, line: line)
         trackForMemoryLeaks(client, file: file, line: line)
         return (sut, client)
     }
     
-    private func failure(_ error: RemoteGamesLoader.Error) -> RemoteGamesLoader.Result {
+    private func failure(_ error: RemoteGameDetailLoader.Error) -> RemoteGameDetailLoader.Result {
         return .failure(error)
     }
     
-    private func enrich(_ url: URL, with request: GamesRequest) -> URL {
-        return GamesEndpoint.get(request: request).url(baseURL: url).url!
+    private func enrich(_ url: URL, with id: Int) -> URL {
+        return GameDetailEndpoint.get(id: id).url(baseURL: url).url!
     }
 
     
-    private func expect(_ sut: RemoteGamesLoader, with request: GamesRequest = GamesRequest(page: 1, page_size: 10), toCompleteWith expectedResult: RemoteGamesLoader.Result, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line){
+    private func expect(_ sut: RemoteGameDetailLoader, with id: Int = 1234, toCompleteWith expectedResult: RemoteGameDetailLoader.Result, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line){
         
         let exp = expectation(description: "Wait for load completion")
-        sut.load(request: request) { receivedResult in
+        sut.get(for: id) { receivedResult in
             switch (receivedResult, expectedResult) {
             case let (.success(receivedItems), .success(expectedItems)):
                 XCTAssertEqual(receivedItems, expectedItems, file: file, line: line)
-            case let (.failure(receivedError as RemoteGamesLoader.Error), .failure(expectedError as RemoteGamesLoader.Error)):
+            case let (.failure(receivedError as RemoteGameDetailLoader.Error), .failure(expectedError as RemoteGameDetailLoader.Error)):
                 XCTAssertEqual(receivedError, expectedError, file: file, line: line)
             default:
                 XCTFail("Expected result \(expectedResult) got \(receivedResult) instead", file: file, line: line)
@@ -149,22 +136,27 @@ class LoadGamesFromRemoteUseCaseTests: XCTestCase {
         wait(for: [exp], timeout: 1.0)
     }
     
-    private func createRequest(query: String? = nil) -> GamesRequest {
-        return GamesRequest(page: 1, page_size: 10, search: query)
-    }
-    
-    private func makeItem(id: Int, title: String, releaseDate: String, rating: Double, image: URL) -> (model: GameItem, json: [String: Any]) {
-        let item = GameItem(id: id, title: title, releaseDate: releaseDate, rating: rating, image: image)
+    private func makeItem(id: Int, title: String, releaseDate: String, rating: Double, image: URL, description: String, played: Int, developer: String, isFavorite: Bool) -> (model: GameDetailItem, data: Data) {
+        let item = GameDetailItem(id: id, title: title, releaseDate: releaseDate, rating: rating, image: image, description: description, played: played, developers: developer, isFavorite: isFavorite)
         
         let json = [
             "id": id,
             "name": "\(title)",
             "released": "\(releaseDate)",
             "rating": rating,
-            "background_image": "\(image.absoluteString)"
+            "description": description,
+            "background_image": "\(image.absoluteString)",
+            "added_by_status": [
+                "playing": played
+            ],
+            "developers": [
+                [
+                    "name": developer
+                ]
+            ]
         ].compactMapValues { $0 }
-        
-        return (item, json)
+        let data = try! JSONSerialization.data(withJSONObject: json)
+        return (item, data)
     }
 }
 
