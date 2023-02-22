@@ -50,7 +50,7 @@ class GameDetailItemsMapperTests: XCTestCase {
             "description": description,
             "background_image": "\(image.absoluteString)",
             "added_by_status": [
-                "player": played
+                "playing": played
             ],
             "developers": [
                 [
