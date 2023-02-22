@@ -113,7 +113,7 @@ class LoadImageDataFromCacheUseCaseTests: XCTestCase {
     }
     
     private func makeItem() -> GameDetailItem {
-        return GameDetailItem(id: 2342, title: "GTA", releaseDate: "2013-09-17", rating: 3.5, image: anyURL(), description: "any description", played: 93, developers: "Rockstart", isFavorite: false)
+        return GameDetailItem(id: anyID(), title: "GTA", releaseDate: "2013-09-17", rating: 3.5, image: anyURL(), description: "any description", played: 93, developers: "Rockstart", isFavorite: false)
     }
 }
 
