@@ -172,11 +172,9 @@
 		20212F6929A5FAC3000000F5 /* Game Detail Module */ = {
 			isa = PBXGroup;
 			children = (
+				20212F9729A6EEDC000000F5 /* Features */,
 				20212F7E29A615AA000000F5 /* Game Detail Cache */,
 				20212F7029A5FD5B000000F5 /* Game Detail API */,
-				20212F7F29A615CD000000F5 /* GameDetailCache.swift */,
-				20212F6B29A5FADF000000F5 /* GameDetailLoader.swift */,
-				20212F6D29A5FAE9000000F5 /* GameDetailItem.swift */,
 			);
 			path = "Game Detail Module";
 			sourceTree = "<group>";
@@ -230,6 +228,16 @@
 				20212F9229A6D078000000F5 /* CDGameDetail.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		20212F9729A6EEDC000000F5 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				20212F7F29A615CD000000F5 /* GameDetailCache.swift */,
+				20212F6B29A5FADF000000F5 /* GameDetailLoader.swift */,
+				20212F6D29A5FAE9000000F5 /* GameDetailItem.swift */,
+			);
+			path = Features;
 			sourceTree = "<group>";
 		};
 		2045F90229A46A0E009E17B5 = {
