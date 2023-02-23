@@ -536,12 +536,12 @@
 			isa = PBXGroup;
 			children = (
 				20F60C3E29A739D200394EFF /* Home */,
-				20F60C3529A739B000394EFF /* Cell */,
+				20F60C3529A739B000394EFF /* Game Cell */,
 			);
 			path = "Game ViewController";
 			sourceTree = "<group>";
 		};
-		20F60C3529A739B000394EFF /* Cell */ = {
+		20F60C3529A739B000394EFF /* Game Cell */ = {
 			isa = PBXGroup;
 			children = (
 				20F60C3729A739BE00394EFF /* GameCell.swift */,
@@ -549,7 +549,7 @@
 				20F60C3929A739BE00394EFF /* GameCellController.swift */,
 				20F60C3629A739BD00394EFF /* GameCellViewModel.swift */,
 			);
-			path = Cell;
+			path = "Game Cell";
 			sourceTree = "<group>";
 		};
 		20F60C3E29A739D200394EFF /* Home */ = {
