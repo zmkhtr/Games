@@ -531,13 +531,13 @@
 			path = GamesTests;
 			sourceTree = "<group>";
 		};
-		20F60C2629A7395400394EFF /* Home */ = {
+		20F60C2629A7395400394EFF /* Game ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				20F60C3E29A739D200394EFF /* Home */,
 				20F60C3529A739B000394EFF /* Cell */,
 			);
-			path = Home;
+			path = "Game ViewController";
 			sourceTree = "<group>";
 		};
 		20F60C3529A739B000394EFF /* Cell */ = {
@@ -633,7 +633,7 @@
 			isa = PBXGroup;
 			children = (
 				20F60C5129A768CF00394EFF /* Tabbar */,
-				20F60C2629A7395400394EFF /* Home */,
+				20F60C2629A7395400394EFF /* Game ViewController */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
