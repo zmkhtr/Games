@@ -14,12 +14,14 @@ class GameDetailStoreSpy: GameDetailStore {
         case insert(game: GameDetailItem, for: Int)
         case retrieve(dataFor: Int)
         case retrieveAll
+        case delete
     }
     
     private(set) var receivedMessages = [Message]()
     private var retrievalCompletions = [(GameDetailStore.RetrievalResult) -> Void]()
     private var insertionCompletions = [(GameDetailStore.InsertionResult) -> Void]()
     private var allCompletions = [(GameDetailStore.AllResult) -> Void]()
+    private var deletionCompletions = [(GameDetailStore.DeletionResult) -> Void]()
 
     func insert(_ game: GameDetailItem, completion: @escaping (InsertionResult) -> Void) {
         receivedMessages.append(.insert(game: game, for: game.id))
@@ -37,7 +39,8 @@ class GameDetailStoreSpy: GameDetailStore {
     }
     
     func delete(dataForID id: Int, completion: @escaping (DeletionResult) -> Void) {
-        
+        receivedMessages.append(.delete)
+        deletionCompletions.append(completion)
     }
     
     func completeRetrieval(with error: Error, at index: Int = 0) {
@@ -62,5 +65,13 @@ class GameDetailStoreSpy: GameDetailStore {
     
     func completeAllRetrieval(with game: [GameDetailItem]?, at index: Int = 0) {
         allCompletions[index](.success(game))
+    }
+    
+    func completeDeletion(with error: Error, at index: Int = 0) {
+        deletionCompletions[index](.failure(error))
+    }
+    
+    func completeDeletionSuccessfully(at index: Int = 0) {
+        deletionCompletions[index](.success(()))
     }
 }

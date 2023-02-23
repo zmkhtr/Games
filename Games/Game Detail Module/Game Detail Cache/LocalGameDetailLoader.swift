@@ -51,3 +51,21 @@ extension LocalGameDetailLoader: GameDetailCache {
         }
     }
 }
+
+extension LocalGameDetailLoader: AllGamesDetailLoader {
+    
+    public func getAll(completion: @escaping (AllGamesDetailLoader.Result) -> Void) {
+        store.getAllData { result in
+            switch result {
+            case let .success(games):
+                if let games = games {
+                    completion(.success(games))
+                } else {
+                    completion(.failure(LoadError.notFound))
+                }
+            case .failure:
+                completion(.failure(LoadError.failed))
+            }
+        }
+    }
+}

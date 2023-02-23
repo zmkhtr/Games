@@ -51,6 +51,33 @@ class LoadImageDataFromCacheUseCaseTests: XCTestCase {
         })
     }
 
+    func test_loadAllGameDetailL_failsOnStoreError() {
+        let (sut, store) = makeSUT()
+
+        expectGetAll(sut, toCompleteWith: .failure(LocalGameDetailLoader.LoadError.failed), when: {
+            let retrievalError = anyNSError()
+            store.completeAllRetrieval(with: retrievalError)
+        })
+    }
+
+    func test_loadAllGameDetail_deliversNotFoundErrorOnNotFound() {
+        let (sut, store) = makeSUT()
+
+        expectGetAll(sut, toCompleteWith: .failure(LocalGameDetailLoader.LoadError.notFound), when: {
+            store.completeAllRetrieval(with: .none)
+        })
+    }
+    
+    func test_loadAllGamesDetail_deliversStoredDataOnFoundData() {
+        let (sut, store) = makeSUT()
+        let foundData1 = makeItem()
+        let foundData2 = makeItem()
+        
+
+        expectGetAll(sut, toCompleteWith: .success([foundData1, foundData2]), when: {
+            store.completeAllRetrieval(with: [foundData1, foundData2], at: 0)
+        })
+    }
 
     func test_loadImageDataFromURL_doesNotDeliverResultAfterSUTInstanceHasBeenDeallocated() {
         let store = GameDetailStoreSpy()
@@ -91,6 +118,27 @@ class LoadImageDataFromCacheUseCaseTests: XCTestCase {
         let exp = expectation(description: "Wait for load completion")
         
         sut.get(for: 234) { receivedResult in
+            switch (receivedResult, expectedResult) {
+            case let (.success(receivedData), .success(expectedData)):
+                XCTAssertEqual(receivedData, expectedData, file: file, line: line)
+                
+            case (.failure(let receivedError as LocalGameDetailLoader.LoadError), .failure(let expectedError as LocalGameDetailLoader.LoadError)):
+                XCTAssertEqual(receivedError, expectedError, file: file, line: line)
+                
+            default:
+                XCTFail("Expected result \(expectedResult), got \(receivedResult) instead", file: file, line: line)
+            }
+            
+            exp.fulfill()
+        }
+        action()
+        wait(for: [exp], timeout: 1.0)
+    }
+    
+    private func expectGetAll(_ sut: LocalGameDetailLoader, toCompleteWith expectedResult: AllGamesDetailLoader.Result, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
+        let exp = expectation(description: "Wait for load completion")
+     
+        sut.getAll { receivedResult in
             switch (receivedResult, expectedResult) {
             case let (.success(receivedData), .success(expectedData)):
                 XCTAssertEqual(receivedData, expectedData, file: file, line: line)
