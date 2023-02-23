@@ -113,13 +113,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		20212F3A29A5BEFA000000F5 /* HTTPClient */ = {
+		20212F3A29A5BEFA000000F5 /* HTTPClient Module */ = {
 			isa = PBXGroup;
 			children = (
 				20212F3B29A5BF0D000000F5 /* HTTPClient.swift */,
 				20212F4329A5BFF1000000F5 /* URLSessionHTTPClient.swift */,
 			);
-			path = HTTPClient;
+			path = "HTTPClient Module";
 			sourceTree = "<group>";
 		};
 		20212F4529A5C0D7000000F5 /* HTTP Client Tests */ = {
@@ -267,7 +267,7 @@
 			children = (
 				20212F6929A5FAC3000000F5 /* Game Detail Module */,
 				20212F4829A5C36B000000F5 /* Games Module */,
-				20212F3A29A5BEFA000000F5 /* HTTPClient */,
+				20212F3A29A5BEFA000000F5 /* HTTPClient Module */,
 			);
 			path = Games;
 			sourceTree = "<group>";
