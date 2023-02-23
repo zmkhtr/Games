@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Games_App" customModuleProvider="target">
+            <connections>
+                <outlet property="retryButton" destination="QJR-cZ-JR3" id="Xac-Os-oKq"/>
+                <outlet property="tableView" destination="F8t-8S-v6X" id="TI8-gT-Ou6"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="F8t-8S-v6X">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <button hidden="YES" opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJR-cZ-JR3">
+                    <rect key="frame" x="118.33333333333333" y="398" width="156.33333333333337" height="56.333333333333314"/>
+                    <color key="tintColor" systemColor="systemRedColor"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain">
+                        <string key="title">Fetch data failed
+     Tap to Retry</string>
+                        <fontDescription key="titleFontDescription" style="UICTFontTextStyleHeadline"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="retryAction:" destination="-1" eventType="touchUpInside" id="TAb-B0-yct"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="F8t-8S-v6X" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="LiW-Y8-hT3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="F8t-8S-v6X" secondAttribute="trailing" id="atN-7o-Om9"/>
+                <constraint firstItem="QJR-cZ-JR3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cyT-9e-t2A"/>
+                <constraint firstItem="F8t-8S-v6X" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dgL-2d-UfS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="F8t-8S-v6X" secondAttribute="bottom" id="mcp-zq-ldN"/>
+                <constraint firstItem="QJR-cZ-JR3" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="rt5-BL-E24"/>
+            </constraints>
+            <point key="canvasLocation" x="110" y="21"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
