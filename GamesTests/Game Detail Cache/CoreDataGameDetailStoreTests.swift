@@ -48,6 +48,27 @@ class CoreDataImageDataStoreTests: XCTestCase {
 
         expect(sut, toCompleteRetrievalWith: found(lastStoredData), for: id)
     }
+    
+    func test_getAllData_deliverAllInsertedValue() {
+        let sut = makeSUT()
+        let firstStoredData = makeItem(id: 234)
+        let id = 534
+        let lastStoredData = makeItem(id: id)
+
+        insert(firstStoredData, into: sut)
+        insert(lastStoredData, into: sut)
+        insert(lastStoredData, into: sut)
+        
+        sut.getAllData { result in
+            switch result {
+            case let .success(gamesDetail):
+                XCTAssertNotNil(gamesDetail)
+                XCTAssertEqual(2, gamesDetail?.count)
+            default:
+                break
+            }
+        }
+    }
 
     func test_sideEffects_runSerially() {
         let sut = makeSUT()

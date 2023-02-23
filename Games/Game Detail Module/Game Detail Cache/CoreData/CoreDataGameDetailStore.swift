@@ -84,5 +84,23 @@ extension CoreDataGameDetailStore: GameDetailStore {
         }
     }
     
+    public func getAllData(completion: @escaping (AllResult) -> Void) {
+        perform { context in
+            completion(Result {
+                try CDGameDetail.getAllData(in: context)?.map({
+                    GameDetailItem(
+                        id: $0.id,
+                        title: $0.title,
+                        releaseDate: $0.releaseDate,
+                        rating: $0.rating,
+                        image: $0.image,
+                        description: $0.gameDescription,
+                        played: $0.played,
+                        developers: $0.developers,
+                        isFavorite: $0.isFavorite)
+                })
+            })
+        }
+    }
 }
 

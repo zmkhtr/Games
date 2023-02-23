@@ -30,6 +30,12 @@ extension CDGameDetail {
         return try context.fetch(request).first
     }
     
+    static func getAllData(in context: NSManagedObjectContext) throws -> [CDGameDetail]? {
+        let request = NSFetchRequest<CDGameDetail>(entityName: entity().name!)
+        request.returnsObjectsAsFaults = false
+        return try context.fetch(request)
+    }
+    
     static func game(from game: GameDetailItem, in context: NSManagedObjectContext) {
         let managed = CDGameDetail(context: context)
         managed.id = game.id
