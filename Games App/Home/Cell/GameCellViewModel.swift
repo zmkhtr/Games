@@ -33,14 +33,23 @@ class GameCellViewModel {
         return "\(model.rating)"
     }
     
-    var onImageLoad: Observer<UIImage>?
+    var onImageLoad: Observer<UIImage?>?
     var onImageLoadingStateChange: Observer<Bool>?
     var onShouldRetryImageLoadStateChange: Observer<Bool>?
     
     func loadImageData() {
         onImageLoadingStateChange?(true)
         onShouldRetryImageLoadStateChange?(false)
-        task = imageLoader.loadImageData(from: model.image) { [weak self] result in
+        
+        self.onImageLoad?(nil)
+        
+        guard let imageURL = model.image else {
+            self.onImageLoadingStateChange?(false)
+            self.onImageLoad?(UIImage(named: "image_not_found")!)
+            return
+        }
+        
+        task = imageLoader.loadImageData(from: imageURL) { [weak self] result in
             guard let self = self else { return }
             self.onImageLoadingStateChange?(false)
             
