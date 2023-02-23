@@ -16,7 +16,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
 
         window = UIWindow(windowScene: scene)
-        window?.rootViewController = HomeUIFactory.create()
+        let homeVCitem = TabbarItem(viewController: HomeUIFactory.create(), title: "Games For you", image: UIImage(systemName: "house")!)
+        let homeVCitem1 = TabbarItem(viewController: HomeUIFactory.create(), title: "Home", image: UIImage(systemName: "house")!)
+        let tabBar = TabbarViewController(vcItems: [homeVCitem, homeVCitem1])
+        window?.rootViewController = tabBar
         window?.makeKeyAndVisible()
     }
 
