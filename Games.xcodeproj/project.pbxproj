@@ -81,6 +81,7 @@
 		20F60C5E29A78CB900394EFF /* ImageLoaderWithFallBackComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60C5D29A78CB900394EFF /* ImageLoaderWithFallBackComposite.swift */; };
 		20F60C6029A78CD400394EFF /* ImageLoaderWithCacheDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60C5F29A78CD400394EFF /* ImageLoaderWithCacheDecorator.swift */; };
 		20F60C6329A78D0000394EFF /* HomeUIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60C6229A78D0000394EFF /* HomeUIFactory.swift */; };
+		20F60C6929A791C300394EFF /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60C6829A791C300394EFF /* AppFlow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -207,6 +208,7 @@
 		20F60C5D29A78CB900394EFF /* ImageLoaderWithFallBackComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderWithFallBackComposite.swift; sourceTree = "<group>"; };
 		20F60C5F29A78CD400394EFF /* ImageLoaderWithCacheDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderWithCacheDecorator.swift; sourceTree = "<group>"; };
 		20F60C6229A78D0000394EFF /* HomeUIFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUIFactory.swift; sourceTree = "<group>"; };
+		20F60C6829A791C300394EFF /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -451,6 +453,7 @@
 				20F60C6729A78D6700394EFF /* ViewControllers */,
 				20F60C6629A78D5700394EFF /* Main Modules */,
 				20F60C5429A7727700394EFF /* Extensions */,
+				20F60C6829A791C300394EFF /* AppFlow.swift */,
 				2026493329A704AB00347CB5 /* AppDelegate.swift */,
 				2026493529A704AB00347CB5 /* SceneDelegate.swift */,
 				2026493729A704AB00347CB5 /* ViewController.swift */,
@@ -851,6 +854,7 @@
 				20F60C4429A739DA00394EFF /* HomeViewModel.swift in Sources */,
 				2026493829A704AB00347CB5 /* ViewController.swift in Sources */,
 				20F60C5E29A78CB900394EFF /* ImageLoaderWithFallBackComposite.swift in Sources */,
+				20F60C6929A791C300394EFF /* AppFlow.swift in Sources */,
 				2026493429A704AB00347CB5 /* AppDelegate.swift in Sources */,
 				20F60C5B29A78C9200394EFF /* AuthenticatedHTTPClientDecorator.swift in Sources */,
 				20F60C4629A739E300394EFF /* UIView+Shimmering.swift in Sources */,

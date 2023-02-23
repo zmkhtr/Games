@@ -10,21 +10,11 @@ import Games
 
 final class HomeUIFactory {
     
-    private static var store: ImageDataStore = {
-        try! CoreDataImageDataStore(
-            storeURL: NSPersistentContainer
-                .defaultDirectoryURL()
-                .appendingPathComponent("image-store.sqlite"))
-    }()
-    
-    
-    public static func create() -> HomeViewController {
-        let session = URLSession(configuration: .default)
-        let httpClient = URLSessionHTTPClient(session: session)
-        let authHTTPClient = AuthenticatedHTTPClientDecorator(decoratee: httpClient)
-        let gamesLoader = RemoteGamesLoader(url: URL(string: "https://api.rawg.io/api/games")!, client: authHTTPClient)
+    public static func create(httpClient: HTTPClient, imageStore: ImageDataStore) -> HomeViewController {
+       
+        let gamesLoader = RemoteGamesLoader(url: URL(string: "https://api.rawg.io/api/games")!, client: httpClient)
         
-        let imageCache = LocalImageDataLoader(store: store)
+        let imageCache = LocalImageDataLoader(store: imageStore)
         let remoteImageLoader = RemoteImageDataLoader(client: httpClient)
         let imageCacheDecorator = ImageLoaderWithCacheDecorator(
             decoratee: remoteImageLoader,
