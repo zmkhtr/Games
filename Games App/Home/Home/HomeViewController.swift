@@ -51,6 +51,7 @@ final class HomeViewController: UIViewController {
     private func setUpSearchController() {
         let search = UISearchController(searchResultsController: nil)
         search.searchBar.delegate = self
+        search.delegate = self
         self.navigationItem.searchController = search
         self.navigationItem.hidesSearchBarWhenScrolling = false
     }
@@ -186,7 +187,7 @@ extension HomeViewController {
 }
 
 
-extension HomeViewController: UISearchBarDelegate {
+extension HomeViewController: UISearchBarDelegate, UISearchControllerDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 
         NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(HomeViewController.searchQuery), object: nil)
@@ -199,6 +200,12 @@ extension HomeViewController: UISearchBarDelegate {
         cellControllers.removeAll()
         tableView.reloadData()
         viewModel.loadGames(query: query)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        cellControllers.removeAll()
+        tableView.reloadData()
+        viewModel.loadGames()
     }
 }
 
