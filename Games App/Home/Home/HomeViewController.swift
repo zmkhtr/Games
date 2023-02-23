@@ -37,10 +37,22 @@ final class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setUpTableView()
+      
+        setupView()
         bindViewModel()
         refresh()
+    }
+    
+    private func setupView() {
+        setUpTableView()
+        setUpSearchController()
+    }
+    
+    private func setUpSearchController() {
+        let search = UISearchController(searchResultsController: nil)
+        search.searchBar.delegate = self
+        self.navigationItem.searchController = search
+        self.navigationItem.hidesSearchBarWhenScrolling = false
     }
     
     private func setUpTableView() {
@@ -52,7 +64,12 @@ final class HomeViewController: UIViewController {
     }
     
     @objc func refresh() {
-        viewModel.loadGames()
+        var query = ""
+        if let searchText = navigationItem.searchController?.searchBar.text {
+            query = searchText
+        }
+
+        viewModel.loadGames(query: query)
     }
     
     
@@ -99,7 +116,7 @@ extension HomeViewController {
             
             self.tableView.insertRows(at: (startIndex..<endIndex).map({ row in
                 IndexPath(row: row, section: 0)
-            }), with: .automatic)
+            }), with: .left)
         }
         
         viewModel.onErrorGettingNextPage = { [weak self] errorMessage in
@@ -165,3 +182,20 @@ extension HomeViewController {
         }
     }
 }
+extension HomeViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+
+        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(HomeViewController.searchQuery), object: nil)
+           self.perform(#selector(HomeViewController.searchQuery), with: nil, afterDelay: 0.5)
+     
+    }
+    
+    @objc func searchQuery() {
+        guard let query = navigationItem.searchController?.searchBar.text else { return }
+        cellControllers.removeAll()
+        tableView.reloadData()
+        viewModel.loadGames(query: query)
+    }
+}
+
+
