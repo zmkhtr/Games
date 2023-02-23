@@ -252,7 +252,6 @@
 			children = (
 				20212F8B29A6CE53000000F5 /* GameDetail.xcdatamodeld */,
 				20212F8E29A6CFEF000000F5 /* CoreDataGameDetailStore.swift */,
-				20212F9029A6D021000000F5 /* CoreDataHelpers.swift */,
 				20212F9229A6D078000000F5 /* CDGameDetail.swift */,
 			);
 			path = CoreData;
@@ -327,6 +326,14 @@
 			path = "Core Data";
 			sourceTree = "<group>";
 		};
+		2026492C29A7018E00347CB5 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				20212F9029A6D021000000F5 /* CoreDataHelpers.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		2045F90229A46A0E009E17B5 = {
 			isa = PBXGroup;
 			children = (
@@ -349,6 +356,7 @@
 		2045F90E29A46A0E009E17B5 /* Games */ = {
 			isa = PBXGroup;
 			children = (
+				2026492C29A7018E00347CB5 /* Shared */,
 				20212F9C29A6F36D000000F5 /* Image Module */,
 				20212F6929A5FAC3000000F5 /* Game Detail Module */,
 				20212F4829A5C36B000000F5 /* Games Module */,
