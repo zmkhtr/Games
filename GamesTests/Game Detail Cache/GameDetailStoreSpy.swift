@@ -9,7 +9,7 @@ import Foundation
 import Games
 
 class GameDetailStoreSpy: GameDetailStore {
-
+    
     enum Message: Equatable {
         case insert(game: GameDetailItem, for: Int)
         case retrieve(dataFor: Int)
@@ -34,6 +34,10 @@ class GameDetailStoreSpy: GameDetailStore {
     func getAllData(completion: @escaping (GameDetailStore.AllResult) -> Void) {
         receivedMessages.append(.retrieveAll)
         allCompletions.append(completion)
+    }
+    
+    func delete(dataForID id: Int, completion: @escaping (DeletionResult) -> Void) {
+        
     }
     
     func completeRetrieval(with error: Error, at index: Int = 0) {

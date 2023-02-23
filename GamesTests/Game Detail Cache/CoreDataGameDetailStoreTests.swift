@@ -69,6 +69,17 @@ class CoreDataImageDataStoreTests: XCTestCase {
             }
         }
     }
+    
+    func test_deleteGameDetail_deliversNotFoundAfterDeletion() {
+        let sut = makeSUT()
+        let id = 534
+        let item = makeItem(id: id)
+
+        insert(item, into: sut)
+        sut.delete(dataForID: id) { _ in }
+        
+        expect(sut, toCompleteRetrievalWith: notFound(), for: id)
+    }
 
     func test_sideEffects_runSerially() {
         let sut = makeSUT()

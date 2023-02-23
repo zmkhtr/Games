@@ -51,6 +51,14 @@ public final class CoreDataGameDetailStore {
 }
 
 extension CoreDataGameDetailStore: GameDetailStore {
+    public func delete(dataForID id: Int, completion: @escaping (DeletionResult) -> Void) {
+        perform { context in
+            completion(Result {
+                try CDGameDetail.first(with: id, in: context).map(context.delete(_:))
+            })
+        }
+    }
+    
 
     public func insert(_ game: GameDetailItem, completion: @escaping (GameDetailStore.InsertionResult) -> Void) {
         perform { context in
