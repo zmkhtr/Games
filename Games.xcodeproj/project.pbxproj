@@ -50,6 +50,10 @@
 		2026491B29A6FC0100347CB5 /* ImageDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2026491A29A6FC0100347CB5 /* ImageDataStore.swift */; };
 		2026491E29A6FCD500347CB5 /* LoadImageDataFromCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2026491D29A6FCD500347CB5 /* LoadImageDataFromCacheUseCaseTests.swift */; };
 		2026492029A6FD5200347CB5 /* ImageDataStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2026491F29A6FD5200347CB5 /* ImageDataStoreSpy.swift */; };
+		2026492429A6FDE900347CB5 /* ImageData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2026492229A6FDE900347CB5 /* ImageData.xcdatamodeld */; };
+		2026492629A6FE2100347CB5 /* CoreDataImageDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2026492529A6FE2100347CB5 /* CoreDataImageDataStore.swift */; };
+		2026492829A6FE3700347CB5 /* CDImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2026492729A6FE3700347CB5 /* CDImageData.swift */; };
+		2026492A29A6FEDD00347CB5 /* CoreDataImageDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2026492929A6FEDD00347CB5 /* CoreDataImageDataStoreTests.swift */; };
 		2045F91729A46A0E009E17B5 /* Games.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2045F90C29A46A0E009E17B5 /* Games.framework */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +112,10 @@
 		2026491A29A6FC0100347CB5 /* ImageDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataStore.swift; sourceTree = "<group>"; };
 		2026491D29A6FCD500347CB5 /* LoadImageDataFromCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImageDataFromCacheUseCaseTests.swift; sourceTree = "<group>"; };
 		2026491F29A6FD5200347CB5 /* ImageDataStoreSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataStoreSpy.swift; sourceTree = "<group>"; };
+		2026492329A6FDE900347CB5 /* ImageData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ImageData.xcdatamodel; sourceTree = "<group>"; };
+		2026492529A6FE2100347CB5 /* CoreDataImageDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataImageDataStore.swift; sourceTree = "<group>"; };
+		2026492729A6FE3700347CB5 /* CDImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDImageData.swift; sourceTree = "<group>"; };
+		2026492929A6FEDD00347CB5 /* CoreDataImageDataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataImageDataStoreTests.swift; sourceTree = "<group>"; };
 		2045F90C29A46A0E009E17B5 /* Games.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Games.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2045F91629A46A0E009E17B5 /* GamesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GamesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -292,6 +300,7 @@
 		2026491729A6FBDD00347CB5 /* Image Cache */ = {
 			isa = PBXGroup;
 			children = (
+				2026492129A6FDD400347CB5 /* Core Data */,
 				2026491829A6FBEB00347CB5 /* LocalImageDataLoader.swift */,
 				2026491A29A6FC0100347CB5 /* ImageDataStore.swift */,
 			);
@@ -303,8 +312,19 @@
 			children = (
 				2026491D29A6FCD500347CB5 /* LoadImageDataFromCacheUseCaseTests.swift */,
 				2026491F29A6FD5200347CB5 /* ImageDataStoreSpy.swift */,
+				2026492929A6FEDD00347CB5 /* CoreDataImageDataStoreTests.swift */,
 			);
 			path = "Image Cache";
+			sourceTree = "<group>";
+		};
+		2026492129A6FDD400347CB5 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				2026492229A6FDE900347CB5 /* ImageData.xcdatamodeld */,
+				2026492529A6FE2100347CB5 /* CoreDataImageDataStore.swift */,
+				2026492729A6FE3700347CB5 /* CDImageData.swift */,
+			);
+			path = "Core Data";
 			sourceTree = "<group>";
 		};
 		2045F90229A46A0E009E17B5 = {
@@ -464,6 +484,7 @@
 				20212F6C29A5FADF000000F5 /* GameDetailLoader.swift in Sources */,
 				20212F6E29A5FAE9000000F5 /* GameDetailItem.swift in Sources */,
 				20212FA029A6F3B1000000F5 /* LocalImageData.swift in Sources */,
+				2026492629A6FE2100347CB5 /* CoreDataImageDataStore.swift in Sources */,
 				20212F8029A615CD000000F5 /* GameDetailCache.swift in Sources */,
 				20212F3C29A5BF0D000000F5 /* HTTPClient.swift in Sources */,
 				20212F4429A5BFF1000000F5 /* URLSessionHTTPClient.swift in Sources */,
@@ -473,9 +494,11 @@
 				20212F4C29A5C430000000F5 /* GameItem.swift in Sources */,
 				2026491B29A6FC0100347CB5 /* ImageDataStore.swift in Sources */,
 				20212F8F29A6CFEF000000F5 /* CoreDataGameDetailStore.swift in Sources */,
+				2026492829A6FE3700347CB5 /* CDImageData.swift in Sources */,
 				20212F4A29A5C3B7000000F5 /* GamesLoader.swift in Sources */,
 				20212F8229A61953000000F5 /* LocalGameDetailLoader.swift in Sources */,
 				2026491329A6FA7400347CB5 /* RemoteImageDataLoader.swift in Sources */,
+				2026492429A6FDE900347CB5 /* ImageData.xcdatamodeld in Sources */,
 				20212F8429A6406B000000F5 /* GameDetailStore.swift in Sources */,
 				20212F8D29A6CE53000000F5 /* GameDetail.xcdatamodeld in Sources */,
 				20212F7729A5FEBA000000F5 /* GameDetailItemsMapper.swift in Sources */,
@@ -495,6 +518,7 @@
 			files = (
 				20212F7D29A60FAE000000F5 /* LoadGamesDetailFromRemoteUseCaseTests.swift in Sources */,
 				20212F9629A6D2F7000000F5 /* CoreDataGameDetailStoreTests.swift in Sources */,
+				2026492A29A6FEDD00347CB5 /* CoreDataImageDataStoreTests.swift in Sources */,
 				2026491629A6FABB00347CB5 /* LoadImageDataFromRemoteUseCaseTests.swift in Sources */,
 				20212F8729A64FF8000000F5 /* LoadGameDetailFromCacheUseCaseTests.swift in Sources */,
 				2026491E29A6FCD500347CB5 /* LoadImageDataFromCacheUseCaseTests.swift in Sources */,
@@ -794,6 +818,16 @@
 			);
 			currentVersion = 20212F8C29A6CE53000000F5 /* GameDetail.xcdatamodel */;
 			path = GameDetail.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		2026492229A6FDE900347CB5 /* ImageData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2026492329A6FDE900347CB5 /* ImageData.xcdatamodel */,
+			);
+			currentVersion = 2026492329A6FDE900347CB5 /* ImageData.xcdatamodel */;
+			path = ImageData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
