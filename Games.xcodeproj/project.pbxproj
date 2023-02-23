@@ -448,13 +448,9 @@
 		2026493229A704AB00347CB5 /* Games App */ = {
 			isa = PBXGroup;
 			children = (
-				20F60C6429A78D1E00394EFF /* Composer */,
-				20F60C6129A78CF400394EFF /* Factory */,
-				20F60C5C29A78CAC00394EFF /* Composite */,
-				20F60C5729A78C6800394EFF /* Decorator */,
-				20F60C5429A7727700394EFF /* Extension */,
-				20F60C5129A768CF00394EFF /* Tabbar */,
-				20F60C2629A7395400394EFF /* Home */,
+				20F60C6729A78D6700394EFF /* ViewControllers */,
+				20F60C6629A78D5700394EFF /* Main Modules */,
+				20F60C5429A7727700394EFF /* Extensions */,
 				2026493329A704AB00347CB5 /* AppDelegate.swift */,
 				2026493529A704AB00347CB5 /* SceneDelegate.swift */,
 				2026493729A704AB00347CB5 /* ViewController.swift */,
@@ -580,12 +576,12 @@
 			path = Tabbar;
 			sourceTree = "<group>";
 		};
-		20F60C5429A7727700394EFF /* Extension */ = {
+		20F60C5429A7727700394EFF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				20F60C4529A739E300394EFF /* UIView+Shimmering.swift */,
 			);
-			path = Extension;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		20F60C5729A78C6800394EFF /* Decorator */ = {
@@ -620,6 +616,26 @@
 				20F60C4D29A7459600394EFF /* HomeUIComposer.swift */,
 			);
 			path = Composer;
+			sourceTree = "<group>";
+		};
+		20F60C6629A78D5700394EFF /* Main Modules */ = {
+			isa = PBXGroup;
+			children = (
+				20F60C6429A78D1E00394EFF /* Composer */,
+				20F60C6129A78CF400394EFF /* Factory */,
+				20F60C5C29A78CAC00394EFF /* Composite */,
+				20F60C5729A78C6800394EFF /* Decorator */,
+			);
+			path = "Main Modules";
+			sourceTree = "<group>";
+		};
+		20F60C6729A78D6700394EFF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				20F60C5129A768CF00394EFF /* Tabbar */,
+				20F60C2629A7395400394EFF /* Home */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
