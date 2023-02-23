@@ -81,6 +81,8 @@
 		20F60C6029A78CD400394EFF /* ImageLoaderWithCacheDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60C5F29A78CD400394EFF /* ImageLoaderWithCacheDecorator.swift */; };
 		20F60C6329A78D0000394EFF /* HomeUIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60C6229A78D0000394EFF /* HomeUIFactory.swift */; };
 		20F60C6929A791C300394EFF /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60C6829A791C300394EFF /* AppFlow.swift */; };
+		20F60C7129A7A96000394EFF /* LoadingFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60C7029A7A96000394EFF /* LoadingFooter.swift */; };
+		20F60C7329A7A97100394EFF /* LoadingFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20F60C7229A7A97100394EFF /* LoadingFooter.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -207,6 +209,8 @@
 		20F60C5F29A78CD400394EFF /* ImageLoaderWithCacheDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderWithCacheDecorator.swift; sourceTree = "<group>"; };
 		20F60C6229A78D0000394EFF /* HomeUIFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUIFactory.swift; sourceTree = "<group>"; };
 		20F60C6829A791C300394EFF /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
+		20F60C7029A7A96000394EFF /* LoadingFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingFooter.swift; sourceTree = "<group>"; };
+		20F60C7229A7A97100394EFF /* LoadingFooter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingFooter.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -535,6 +539,7 @@
 		20F60C2629A7395400394EFF /* Game ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				20F60C6F29A7A94000394EFF /* Loading Footer */,
 				20F60C3E29A739D200394EFF /* Home */,
 				20F60C3529A739B000394EFF /* Game Cell */,
 			);
@@ -628,6 +633,15 @@
 				20F60C2629A7395400394EFF /* Game ViewController */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		20F60C6F29A7A94000394EFF /* Loading Footer */ = {
+			isa = PBXGroup;
+			children = (
+				20F60C7029A7A96000394EFF /* LoadingFooter.swift */,
+				20F60C7229A7A97100394EFF /* LoadingFooter.xib */,
+			);
+			path = "Loading Footer";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -792,6 +806,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2026494029A704AD00347CB5 /* LaunchScreen.storyboard in Resources */,
+				20F60C7329A7A97100394EFF /* LoadingFooter.xib in Resources */,
 				2026493D29A704AD00347CB5 /* Assets.xcassets in Resources */,
 				20F60C3C29A739BE00394EFF /* GameCell.xib in Resources */,
 				20F60C4229A739DA00394EFF /* HomeViewController.xib in Resources */,
@@ -850,6 +865,7 @@
 				20F60C6329A78D0000394EFF /* HomeUIFactory.swift in Sources */,
 				20F60C6029A78CD400394EFF /* ImageLoaderWithCacheDecorator.swift in Sources */,
 				2026493629A704AB00347CB5 /* SceneDelegate.swift in Sources */,
+				20F60C7129A7A96000394EFF /* LoadingFooter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

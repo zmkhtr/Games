@@ -20,6 +20,13 @@ final class HomeViewController: UIViewController {
         return refreshControl
     }()
     
+    private lazy var loadingFooter: LoadingFooter = {
+        let footer = LoadingFooter.instanceFromNib()
+        footer.frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: tableView.bounds.width, height: CGFloat(100))
+
+        return footer
+    }()
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var retryButton: UIButton!
     
@@ -62,6 +69,10 @@ final class HomeViewController: UIViewController {
         tableView.prefetchDataSource = self
         tableView.refreshControl = refreshControl
         tableView.register(UINib(nibName: "GameCell", bundle: nil), forCellReuseIdentifier: "GameCell")
+        
+        tableView.contentInset.bottom = self.tabBarController?.tabBar.frame.height ?? 0
+        tableView.tableFooterView = loadingFooter
+        tableView.tableFooterView?.isHidden = false
     }
     
     @objc func refresh() {
