@@ -75,7 +75,6 @@
 		20F60C4829A739F700394EFF /* Games.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2045F90C29A46A0E009E17B5 /* Games.framework */; };
 		20F60C4929A739F700394EFF /* Games.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2045F90C29A46A0E009E17B5 /* Games.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		20F60C4E29A7459600394EFF /* HomeUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60C4D29A7459600394EFF /* HomeUIComposer.swift */; };
-		20F60C5329A7690200394EFF /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60C5229A7690200394EFF /* TabbarViewController.swift */; };
 		20F60C5929A78C7800394EFF /* MainQueueDispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60C5829A78C7800394EFF /* MainQueueDispatchDecorator.swift */; };
 		20F60C5B29A78C9200394EFF /* AuthenticatedHTTPClientDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60C5A29A78C9200394EFF /* AuthenticatedHTTPClientDecorator.swift */; };
 		20F60C5E29A78CB900394EFF /* ImageLoaderWithFallBackComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60C5D29A78CB900394EFF /* ImageLoaderWithFallBackComposite.swift */; };
@@ -202,7 +201,6 @@
 		20F60C4129A739DA00394EFF /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		20F60C4529A739E300394EFF /* UIView+Shimmering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shimmering.swift"; sourceTree = "<group>"; };
 		20F60C4D29A7459600394EFF /* HomeUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUIComposer.swift; sourceTree = "<group>"; };
-		20F60C5229A7690200394EFF /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		20F60C5829A78C7800394EFF /* MainQueueDispatchDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQueueDispatchDecorator.swift; sourceTree = "<group>"; };
 		20F60C5A29A78C9200394EFF /* AuthenticatedHTTPClientDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedHTTPClientDecorator.swift; sourceTree = "<group>"; };
 		20F60C5D29A78CB900394EFF /* ImageLoaderWithFallBackComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderWithFallBackComposite.swift; sourceTree = "<group>"; };
@@ -571,14 +569,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		20F60C5129A768CF00394EFF /* Tabbar */ = {
-			isa = PBXGroup;
-			children = (
-				20F60C5229A7690200394EFF /* TabbarViewController.swift */,
-			);
-			path = Tabbar;
-			sourceTree = "<group>";
-		};
 		20F60C5429A7727700394EFF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -635,7 +625,6 @@
 		20F60C6729A78D6700394EFF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				20F60C5129A768CF00394EFF /* Tabbar */,
 				20F60C2629A7395400394EFF /* Game ViewController */,
 			);
 			path = ViewControllers;
@@ -847,7 +836,6 @@
 			files = (
 				20F60C3B29A739BE00394EFF /* GameCell.swift in Sources */,
 				20F60C3D29A739BE00394EFF /* GameCellController.swift in Sources */,
-				20F60C5329A7690200394EFF /* TabbarViewController.swift in Sources */,
 				20F60C4E29A7459600394EFF /* HomeUIComposer.swift in Sources */,
 				20F60C5929A78C7800394EFF /* MainQueueDispatchDecorator.swift in Sources */,
 				20F60C3A29A739BE00394EFF /* GameCellViewModel.swift in Sources */,
