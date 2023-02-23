@@ -8,7 +8,7 @@
 import XCTest
 import Games
 
-class LoadImageDataFromCacheUseCaseTests: XCTestCase {
+class LoadGameDetailFromCacheUseCaseTests: XCTestCase {
     
     func test_init_doesNotMessageStoreUponCreation() {
         let (_, store) = makeSUT()

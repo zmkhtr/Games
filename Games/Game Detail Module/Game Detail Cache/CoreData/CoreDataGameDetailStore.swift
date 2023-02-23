@@ -26,7 +26,7 @@ public final class CoreDataGameDetailStore {
         }
         
         do {
-            container = try NSPersistentContainer.load(modelName: "ImageData", model: model, url: storeURL)
+            container = try NSPersistentContainer.load(modelName: "GameDetail", model: model, url: storeURL)
             context = container.newBackgroundContext()
         } catch {
             throw StoreError.failedToLoadPersistentContainer(error)
