@@ -61,5 +61,15 @@ extension MainQueueDispatchDecorator: GameDetailCache where T == GameDetailCache
     }
 }
 
+extension MainQueueDispatchDecorator: AllGamesDetailLoader where T == AllGamesDetailLoader {
+    
+    public func getAll(completion: @escaping (AllGamesDetailLoader.Result) -> Void) {
+        decoratee.getAll { [weak self] result in
+            self?.dispatch { completion(result) }
+        }
+    }
+}
+
+
 
 

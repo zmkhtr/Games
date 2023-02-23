@@ -22,7 +22,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var buttonRetry: UIButton!
     
     private let viewModel: DetailViewModel
-    
+    var onFavoriteChange: (() -> Void)?
+
     public init(viewModel: DetailViewModel) {
         self.viewModel = viewModel
         
@@ -118,6 +119,7 @@ class DetailViewController: UIViewController {
         viewModel.onFavoriteChange = { [weak self] isFavorite in
             guard let self = self else { return }
             self.favoriteButton(isFavorite: isFavorite)
+            self.onFavoriteChange?()
         }
     }
 

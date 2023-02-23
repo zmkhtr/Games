@@ -53,6 +53,8 @@ final class AppFlow {
     private var homeNavigationController: UINavigationController!
     private var favoriteNavigationController: UINavigationController!
     
+    private var favoriteVC: FavoriteListViewController!
+    
     init(tabbarController: UITabBarController) {
         self.tabbarController = tabbarController
     }
@@ -60,12 +62,12 @@ final class AppFlow {
     func start() {
         tabbarController.setViewControllers([
             createHomeVCWithNavigationController(),
-//            createFavoriteVCWithNavigationController()
+            createFavoriteVCWithNavigationController()
         ], animated: true)
     }
     
     private func createHomeVCWithNavigationController() -> UIViewController {
-        let homeVC = HomeUIFactory.create(httpClient: httpClient, imageLoader: imageLoader, baseURL: baseURL, onGameSelected: presentDetail)
+        let homeVC = HomeUIFactory.create(httpClient: httpClient, imageLoader: imageLoader, baseURL: baseURL, onGameSelected: presentDetailHome)
         homeNavigationController = UINavigationController(rootViewController: homeVC)
         homeNavigationController.tabBarItem.title = "Home"
         homeNavigationController.tabBarItem.image = UIImage(systemName: "house")
@@ -73,17 +75,28 @@ final class AppFlow {
         return homeNavigationController
     }
     
-//    private func createFavoriteVCWithNavigationController() -> UIViewController {
-//        let homeVC = HomeUIFactory.create(httpClient: httpClient, imageStore: store)
-//        favoriteNavigationController = UINavigationController(rootViewController: homeVC)
-//        favoriteNavigationController.tabBarItem.title = "Favorite"
-//        favoriteNavigationController.tabBarItem.image = UIImage(systemName: "heart")
-//        homeVC.navigationItem.title = "Favorite Games"
-//        return favoriteNavigationController
-//    }
+    private func createFavoriteVCWithNavigationController() -> UIViewController {
+        favoriteVC = FavoriteUIFactory.create(imageLoader: imageLoader, gameStore: gameStore, onGameSelected: presentDetailFavorite)
+        favoriteNavigationController = UINavigationController(rootViewController: favoriteVC)
+        favoriteNavigationController.tabBarItem.title = "Favorite"
+        favoriteNavigationController.tabBarItem.image = UIImage(systemName: "heart")
+        favoriteVC.navigationItem.title = "Favorite Games"
+        return favoriteNavigationController
+    }
     
-    private func presentDetail(id: Int) {
+    private func presentDetailHome(id: Int) {
         let detailVC = DetailUIFactory.create(id: id, gameStore: gameStore, imageLoader: imageLoader, httpClient: httpClient, baseURL: baseURL)
+        detailVC.onFavoriteChange = { [weak self] in
+            self?.favoriteVC.refresh()
+        }
         homeNavigationController.pushViewController(detailVC, animated: true)
+    }
+    
+    private func presentDetailFavorite(id: Int) {
+        let detailVC = DetailUIFactory.create(id: id, gameStore: gameStore, imageLoader: imageLoader, httpClient: httpClient, baseURL: baseURL)
+        detailVC.onFavoriteChange = { [weak self] in
+            self?.favoriteVC.refresh()
+        }
+        favoriteNavigationController.pushViewController(detailVC, animated: true)
     }
 }
