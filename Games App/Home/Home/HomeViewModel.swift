@@ -13,7 +13,7 @@ final class HomeViewModel {
 
     private let gamesLoader: GamesLoader
     private let imageLoader: ImageDataLoader
-    private var request = GamesRequest(page: 1, page_size: 20)
+    private var request = GamesRequest(page: 1, page_size: 10)
 
     public init(gamesLoader: GamesLoader, imageLoader: ImageDataLoader) {
         self.gamesLoader = gamesLoader
@@ -33,7 +33,7 @@ final class HomeViewModel {
     private var isLoading = false
     
     func loadGames(query: String? = nil) {
-        request = GamesRequest(page: 1, page_size: 20, search: query)
+        request = GamesRequest(page: 1, page_size: 10, search: query)
         
         onLoadingStateChange?(true)
         isLoading = true
