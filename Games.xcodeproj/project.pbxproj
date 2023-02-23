@@ -438,6 +438,7 @@
 		2026493229A704AB00347CB5 /* Games App */ = {
 			isa = PBXGroup;
 			children = (
+				20F60C5429A7727700394EFF /* Extension */,
 				20F60C5129A768CF00394EFF /* Tabbar */,
 				20F60C2629A7395400394EFF /* Home */,
 				2026493329A704AB00347CB5 /* AppDelegate.swift */,
@@ -524,7 +525,6 @@
 		20F60C2629A7395400394EFF /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				20F60C4529A739E300394EFF /* UIView+Shimmering.swift */,
 				20F60C3E29A739D200394EFF /* Home */,
 				20F60C3529A739B000394EFF /* Cell */,
 			);
@@ -565,6 +565,14 @@
 				20F60C5229A7690200394EFF /* TabbarViewController.swift */,
 			);
 			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		20F60C5429A7727700394EFF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				20F60C4529A739E300394EFF /* UIView+Shimmering.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
