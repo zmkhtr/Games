@@ -13,14 +13,15 @@ final class HomeUIComposer {
     
     public static func homeComposedWith(
         gamesLoader: GamesLoader,
-        imageLoader: ImageDataLoader
+        imageLoader: ImageDataLoader,
+        onGameSelected: @escaping ((Int) -> Void)
     ) -> HomeViewController {
         
         let viewModel = HomeViewModel(
             gamesLoader: MainQueueDispatchDecorator(decoratee: gamesLoader),
             imageLoader: MainQueueDispatchDecorator(decoratee: imageLoader))
                 
-        return HomeViewController(viewModel: viewModel)
+        return HomeViewController(viewModel: viewModel, onGameSelected: onGameSelected)
     }
 }
 

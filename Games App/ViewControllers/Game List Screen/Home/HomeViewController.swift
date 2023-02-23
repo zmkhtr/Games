@@ -30,9 +30,11 @@ final class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var retryButton: UIButton!
     
-    public init(viewModel: HomeViewModel) {
+    private let onGameSelected: ((Int) -> Void)
+    
+    public init(viewModel: HomeViewModel, onGameSelected: @escaping ((Int) -> Void)) {
         self.viewModel = viewModel
-        
+        self.onGameSelected = onGameSelected
         
         super.init(nibName: "HomeViewController", bundle: nil)
     }
@@ -193,7 +195,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource, UITabl
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let id = cellControllers[indexPath.row].getItem().id
+        onGameSelected(id)
     }
 }
 

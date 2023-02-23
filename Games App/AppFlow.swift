@@ -37,12 +37,12 @@ final class AppFlow {
     func start() {
         tabbarController.setViewControllers([
             createHomeVCWithNavigationController(),
-            createFavoriteVCWithNavigationController()
+//            createFavoriteVCWithNavigationController()
         ], animated: true)
     }
     
     private func createHomeVCWithNavigationController() -> UIViewController {
-        let homeVC = HomeUIFactory.create(httpClient: httpClient, imageStore: store)
+        let homeVC = HomeUIFactory.create(httpClient: httpClient, imageStore: store, onGameSelected: presentDetail)
         homeNavigationController = UINavigationController(rootViewController: homeVC)
         homeNavigationController.tabBarItem.title = "Home"
         homeNavigationController.tabBarItem.image = UIImage(systemName: "house")
@@ -50,12 +50,16 @@ final class AppFlow {
         return homeNavigationController
     }
     
-    private func createFavoriteVCWithNavigationController() -> UIViewController {
-        let homeVC = HomeUIFactory.create(httpClient: httpClient, imageStore: store)
-        favoriteNavigationController = UINavigationController(rootViewController: homeVC)
-        favoriteNavigationController.tabBarItem.title = "Favorite"
-        favoriteNavigationController.tabBarItem.image = UIImage(systemName: "heart")
-        homeVC.navigationItem.title = "Favorite Games"
-        return favoriteNavigationController
+//    private func createFavoriteVCWithNavigationController() -> UIViewController {
+//        let homeVC = HomeUIFactory.create(httpClient: httpClient, imageStore: store)
+//        favoriteNavigationController = UINavigationController(rootViewController: homeVC)
+//        favoriteNavigationController.tabBarItem.title = "Favorite"
+//        favoriteNavigationController.tabBarItem.image = UIImage(systemName: "heart")
+//        homeVC.navigationItem.title = "Favorite Games"
+//        return favoriteNavigationController
+//    }
+    
+    private func presentDetail(id: Int) {
+        
     }
 }
