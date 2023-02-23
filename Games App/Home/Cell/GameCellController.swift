@@ -33,6 +33,7 @@ class GameCellController {
             guard let self = self else { return }
 
             if let size = self.cell?.imageGame.frame.size,
+               let image = image,
                let thumb = image.preparingThumbnail(of: size) {
                 self.cell?.imageGame.image = thumb
             } else {
@@ -81,7 +82,7 @@ class GameCellController {
     }
     
     func cancelLoad() {
-//        releaseCellForReuse()
+        releaseCellForReuse()
         viewModel.cancelImageDataLoad()
     }
     
