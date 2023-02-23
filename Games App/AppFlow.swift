@@ -57,15 +57,4 @@ final class AppFlow {
         homeVC.navigationItem.title = "Favorite Games"
         return favoriteNavigationController!
     }
-    
-    
-    private func createNavController(for rootViewController: UIViewController,
-                                                      title: String,
-                                                      image: UIImage) -> UIViewController {
-            let navController = UINavigationController(rootViewController: rootViewController)
-            navController.tabBarItem.title = title
-            navController.tabBarItem.image = image
-            rootViewController.navigationItem.title = title
-            return navController
-        }
 }
