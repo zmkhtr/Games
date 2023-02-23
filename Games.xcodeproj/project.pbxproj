@@ -86,6 +86,7 @@
 		20F60C7B29A7B86600394EFF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60C7929A7B86600394EFF /* DetailViewController.swift */; };
 		20F60C7C29A7B86600394EFF /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20F60C7A29A7B86600394EFF /* DetailViewController.xib */; };
 		20F60C7E29A7BE2C00394EFF /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60C7D29A7BE2C00394EFF /* DetailViewModel.swift */; };
+		20F60C8229A7CEBF00394EFF /* DetailUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60C8129A7CEBF00394EFF /* DetailUIComposer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -217,6 +218,7 @@
 		20F60C7929A7B86600394EFF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		20F60C7A29A7B86600394EFF /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		20F60C7D29A7BE2C00394EFF /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		20F60C8129A7CEBF00394EFF /* DetailUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUIComposer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -619,6 +621,7 @@
 			isa = PBXGroup;
 			children = (
 				20F60C4D29A7459600394EFF /* HomeUIComposer.swift */,
+				20F60C8129A7CEBF00394EFF /* DetailUIComposer.swift */,
 			);
 			path = Composer;
 			sourceTree = "<group>";
@@ -869,6 +872,7 @@
 			files = (
 				20F60C3B29A739BE00394EFF /* GameCell.swift in Sources */,
 				20F60C3D29A739BE00394EFF /* GameCellController.swift in Sources */,
+				20F60C8229A7CEBF00394EFF /* DetailUIComposer.swift in Sources */,
 				20F60C4E29A7459600394EFF /* HomeUIComposer.swift in Sources */,
 				20F60C5929A78C7800394EFF /* MainQueueDispatchDecorator.swift in Sources */,
 				20F60C3A29A739BE00394EFF /* GameCellViewModel.swift in Sources */,

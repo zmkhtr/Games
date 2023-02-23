@@ -43,3 +43,23 @@ extension MainQueueDispatchDecorator: ImageDataLoader where T == ImageDataLoader
     }
 }
 
+extension MainQueueDispatchDecorator: GameDetailLoader where T == GameDetailLoader {
+    
+    public func get(for id: Int, completion: @escaping (GameDetailLoader.Result) -> Void) {
+        decoratee.get(for: id) { [weak self] result in
+            self?.dispatch { completion(result) }
+        }
+    }
+}
+
+extension MainQueueDispatchDecorator: GameDetailCache where T == GameDetailCache {
+    
+    public func save(_ game: GameDetailItem, completion: @escaping (GameDetailCache.Result) -> Void) {
+        decoratee.save(game) { [weak self] result in
+            self?.dispatch { completion(result) }
+        }
+    }
+}
+
+
+
