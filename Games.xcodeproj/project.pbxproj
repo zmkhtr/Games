@@ -64,6 +64,17 @@
 		2026495529A704AD00347CB5 /* Games_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2026495429A704AD00347CB5 /* Games_AppUITests.swift */; };
 		2026495729A704AD00347CB5 /* Games_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2026495629A704AD00347CB5 /* Games_AppUITestsLaunchTests.swift */; };
 		2045F91729A46A0E009E17B5 /* Games.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2045F90C29A46A0E009E17B5 /* Games.framework */; };
+		20F60C3A29A739BE00394EFF /* GameCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60C3629A739BD00394EFF /* GameCellViewModel.swift */; };
+		20F60C3B29A739BE00394EFF /* GameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60C3729A739BE00394EFF /* GameCell.swift */; };
+		20F60C3C29A739BE00394EFF /* GameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20F60C3829A739BE00394EFF /* GameCell.xib */; };
+		20F60C3D29A739BE00394EFF /* GameCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60C3929A739BE00394EFF /* GameCellController.swift */; };
+		20F60C4229A739DA00394EFF /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20F60C3F29A739DA00394EFF /* HomeViewController.xib */; };
+		20F60C4329A739DA00394EFF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60C4029A739DA00394EFF /* HomeViewController.swift */; };
+		20F60C4429A739DA00394EFF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60C4129A739DA00394EFF /* HomeViewModel.swift */; };
+		20F60C4629A739E300394EFF /* UIView+Shimmering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60C4529A739E300394EFF /* UIView+Shimmering.swift */; };
+		20F60C4829A739F700394EFF /* Games.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2045F90C29A46A0E009E17B5 /* Games.framework */; };
+		20F60C4929A739F700394EFF /* Games.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2045F90C29A46A0E009E17B5 /* Games.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		20F60C4E29A7459600394EFF /* HomeUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60C4D29A7459600394EFF /* HomeUIComposer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,7 +99,28 @@
 			remoteGlobalIDString = 2045F90B29A46A0E009E17B5;
 			remoteInfo = Games;
 		};
+		20F60C4A29A739F700394EFF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2045F90329A46A0E009E17B5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2045F90B29A46A0E009E17B5;
+			remoteInfo = Games;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		20F60C4C29A739F700394EFF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				20F60C4929A739F700394EFF /* Games.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		20212F3929A51662000000F5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -154,6 +186,15 @@
 		2026495629A704AD00347CB5 /* Games_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Games_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2045F90C29A46A0E009E17B5 /* Games.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Games.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2045F91629A46A0E009E17B5 /* GamesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GamesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		20F60C3629A739BD00394EFF /* GameCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCellViewModel.swift; sourceTree = "<group>"; };
+		20F60C3729A739BE00394EFF /* GameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCell.swift; sourceTree = "<group>"; };
+		20F60C3829A739BE00394EFF /* GameCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameCell.xib; sourceTree = "<group>"; };
+		20F60C3929A739BE00394EFF /* GameCellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCellController.swift; sourceTree = "<group>"; };
+		20F60C3F29A739DA00394EFF /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		20F60C4029A739DA00394EFF /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		20F60C4129A739DA00394EFF /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		20F60C4529A739E300394EFF /* UIView+Shimmering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shimmering.swift"; sourceTree = "<group>"; };
+		20F60C4D29A7459600394EFF /* HomeUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUIComposer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +202,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20F60C4829A739F700394EFF /* Games.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +436,7 @@
 		2026493229A704AB00347CB5 /* Games App */ = {
 			isa = PBXGroup;
 			children = (
+				20F60C2629A7395400394EFF /* Home */,
 				2026493329A704AB00347CB5 /* AppDelegate.swift */,
 				2026493529A704AB00347CB5 /* SceneDelegate.swift */,
 				2026493729A704AB00347CB5 /* ViewController.swift */,
@@ -401,6 +444,7 @@
 				2026493C29A704AD00347CB5 /* Assets.xcassets */,
 				2026493E29A704AD00347CB5 /* LaunchScreen.storyboard */,
 				2026494129A704AD00347CB5 /* Info.plist */,
+				20F60C4D29A7459600394EFF /* HomeUIComposer.swift */,
 			);
 			path = "Games App";
 			sourceTree = "<group>";
@@ -432,6 +476,7 @@
 				2026494929A704AD00347CB5 /* Games AppTests */,
 				2026495329A704AD00347CB5 /* Games AppUITests */,
 				2045F90D29A46A0E009E17B5 /* Products */,
+				20F60C4729A739F700394EFF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -473,6 +518,44 @@
 			path = GamesTests;
 			sourceTree = "<group>";
 		};
+		20F60C2629A7395400394EFF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				20F60C4529A739E300394EFF /* UIView+Shimmering.swift */,
+				20F60C3E29A739D200394EFF /* Home */,
+				20F60C3529A739B000394EFF /* Cell */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		20F60C3529A739B000394EFF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				20F60C3729A739BE00394EFF /* GameCell.swift */,
+				20F60C3829A739BE00394EFF /* GameCell.xib */,
+				20F60C3929A739BE00394EFF /* GameCellController.swift */,
+				20F60C3629A739BD00394EFF /* GameCellViewModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		20F60C3E29A739D200394EFF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				20F60C4029A739DA00394EFF /* HomeViewController.swift */,
+				20F60C3F29A739DA00394EFF /* HomeViewController.xib */,
+				20F60C4129A739DA00394EFF /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		20F60C4729A739F700394EFF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -493,10 +576,12 @@
 				2026492D29A704AB00347CB5 /* Sources */,
 				2026492E29A704AB00347CB5 /* Frameworks */,
 				2026492F29A704AB00347CB5 /* Resources */,
+				20F60C4C29A739F700394EFF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				20F60C4B29A739F700394EFF /* PBXTargetDependency */,
 			);
 			name = "Games App";
 			productName = "Games App";
@@ -634,6 +719,8 @@
 			files = (
 				2026494029A704AD00347CB5 /* LaunchScreen.storyboard in Resources */,
 				2026493D29A704AD00347CB5 /* Assets.xcassets in Resources */,
+				20F60C3C29A739BE00394EFF /* GameCell.xib in Resources */,
+				20F60C4229A739DA00394EFF /* HomeViewController.xib in Resources */,
 				2026493B29A704AB00347CB5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -673,8 +760,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20F60C3B29A739BE00394EFF /* GameCell.swift in Sources */,
+				20F60C3D29A739BE00394EFF /* GameCellController.swift in Sources */,
+				20F60C4E29A7459600394EFF /* HomeUIComposer.swift in Sources */,
+				20F60C3A29A739BE00394EFF /* GameCellViewModel.swift in Sources */,
+				20F60C4429A739DA00394EFF /* HomeViewModel.swift in Sources */,
 				2026493829A704AB00347CB5 /* ViewController.swift in Sources */,
 				2026493429A704AB00347CB5 /* AppDelegate.swift in Sources */,
+				20F60C4629A739E300394EFF /* UIView+Shimmering.swift in Sources */,
+				20F60C4329A739DA00394EFF /* HomeViewController.swift in Sources */,
 				2026493629A704AB00347CB5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -774,6 +868,11 @@
 			isa = PBXTargetDependency;
 			target = 2045F90B29A46A0E009E17B5 /* Games */;
 			targetProxy = 2045F91829A46A0E009E17B5 /* PBXContainerItemProxy */;
+		};
+		20F60C4B29A739F700394EFF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2045F90B29A46A0E009E17B5 /* Games */;
+			targetProxy = 20F60C4A29A739F700394EFF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
