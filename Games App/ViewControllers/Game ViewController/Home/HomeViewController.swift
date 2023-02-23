@@ -72,7 +72,7 @@ final class HomeViewController: UIViewController {
         
         tableView.contentInset.bottom = self.tabBarController?.tabBar.frame.height ?? 0
         tableView.tableFooterView = loadingFooter
-        tableView.tableFooterView?.isHidden = false
+        tableView.tableFooterView?.isHidden = true
     }
     
     @objc func refresh() {
@@ -132,14 +132,27 @@ extension HomeViewController {
         }
         
         viewModel.onErrorGettingNextPage = { [weak self] errorMessage in
-//            guard let self = self else { return }
-            // - TODO: After Get Data done.
-            
+            guard let self = self else { return }
+            if errorMessage != nil {
+                self.loadingFooter.labelError.isHidden = false
+                self.tableView.tableFooterView?.isHidden = false
+                self.loadingFooter.activityLoading.stopAnimating()
+            } else {
+                self.loadingFooter.labelError.isHidden = true
+                self.tableView.tableFooterView?.isHidden = false
+                self.loadingFooter.activityLoading.startAnimating()
+            }
         }
         
         viewModel.onLoadingNextPageStateChange = { [weak self] isLoading in
-//            guard let self = self else { return }
-            // - TODO: After Get Data done.
+            guard let self = self else { return }
+            if isLoading {
+                self.tableView.tableFooterView?.isHidden = false
+                self.loadingFooter.activityLoading.startAnimating()
+            } else {
+                self.tableView.tableFooterView?.isHidden = true
+                self.loadingFooter.activityLoading.stopAnimating()
+            }
         }
     }
     
@@ -187,7 +200,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource, UITabl
 
 extension HomeViewController {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard scrollView.isDragging else { return }
+        guard scrollView.isDragging && !cellControllers.isEmpty else { return }
         
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height

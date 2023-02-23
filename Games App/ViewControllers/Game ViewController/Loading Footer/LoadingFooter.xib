@@ -17,33 +17,27 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gzr-ZN-uvB">
                     <rect key="frame" x="0.0" y="59" width="393" height="100"/>
                     <subviews>
-                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgP-41-6Nu">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
-                            <color key="tintColor" systemColor="systemRedColor"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain">
-                                <string key="title">    Failed get next page Tap to Retry or Pull to top
-</string>
-                            </buttonConfiguration>
-                            <connections>
-                                <action selector="retryAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="2QR-12-FCK"/>
-                            </connections>
-                        </button>
                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="2zG-bW-iRZ">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
                         </activityIndicatorView>
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Failed get next page Pull to top to Retry" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BEu-2y-oGS">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" systemColor="systemRedColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="wgP-41-6Nu" firstAttribute="leading" secondItem="gzr-ZN-uvB" secondAttribute="leading" id="1dB-px-CFk"/>
-                        <constraint firstAttribute="bottom" secondItem="wgP-41-6Nu" secondAttribute="bottom" id="2hm-XR-aFe"/>
+                        <constraint firstItem="BEu-2y-oGS" firstAttribute="top" secondItem="gzr-ZN-uvB" secondAttribute="top" id="7Zj-Mj-5Xv"/>
                         <constraint firstAttribute="height" constant="100" id="Foa-Gy-gv1"/>
                         <constraint firstItem="2zG-bW-iRZ" firstAttribute="top" secondItem="gzr-ZN-uvB" secondAttribute="top" id="OId-9Q-ImF"/>
                         <constraint firstAttribute="bottom" secondItem="2zG-bW-iRZ" secondAttribute="bottom" id="On6-FS-Uhq"/>
                         <constraint firstItem="2zG-bW-iRZ" firstAttribute="leading" secondItem="gzr-ZN-uvB" secondAttribute="leading" id="P53-PX-syQ"/>
                         <constraint firstAttribute="trailing" secondItem="2zG-bW-iRZ" secondAttribute="trailing" id="bLk-zn-Ogx"/>
-                        <constraint firstAttribute="trailing" secondItem="wgP-41-6Nu" secondAttribute="trailing" id="wuc-nm-7ED"/>
-                        <constraint firstItem="wgP-41-6Nu" firstAttribute="top" secondItem="gzr-ZN-uvB" secondAttribute="top" id="zCr-AO-HWS"/>
+                        <constraint firstAttribute="bottom" secondItem="BEu-2y-oGS" secondAttribute="bottom" id="doE-U4-GbN"/>
+                        <constraint firstItem="BEu-2y-oGS" firstAttribute="leading" secondItem="gzr-ZN-uvB" secondAttribute="leading" id="hRb-wE-Z92"/>
+                        <constraint firstAttribute="trailing" secondItem="BEu-2y-oGS" secondAttribute="trailing" id="kti-3B-NQl"/>
                     </constraints>
                 </view>
             </subviews>
@@ -56,7 +50,7 @@
             </constraints>
             <connections>
                 <outlet property="activityLoading" destination="2zG-bW-iRZ" id="QZF-ZU-X1V"/>
-                <outlet property="buttonRetry" destination="wgP-41-6Nu" id="58D-04-eOj"/>
+                <outlet property="labelError" destination="BEu-2y-oGS" id="tJc-cC-Qym"/>
             </connections>
             <point key="canvasLocation" x="14.503816793893129" y="19.718309859154932"/>
         </view>
