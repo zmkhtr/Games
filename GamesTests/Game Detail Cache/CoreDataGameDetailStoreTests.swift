@@ -8,7 +8,7 @@
 import XCTest
 import Games
 
-class CoreDataImageDataStoreTests: XCTestCase {
+class CoreDataGameDetailStoreTests: XCTestCase {
     
     func test_retrieveGameDetail_deliversNotFoundWhenEmpty() {
         let sut = makeSUT()
