@@ -39,6 +39,7 @@ final class HomeViewModel {
         onLoadingStateChange?(true)
         onErrorStateChange?(nil)
         isLoading = true
+        
         gamesLoader.load(request: request) { [weak self] result in
             guard let self = self else { return }
             self.onLoadingStateChange?(false)
@@ -47,6 +48,7 @@ final class HomeViewModel {
             switch result {
             case let .success(games):
                 self.onGamesLoad?(self.map(games: games))
+                self.request.page += 1
             case .failure:
                 self.onErrorStateChange?("Error Fetching Data")
             }
@@ -55,9 +57,11 @@ final class HomeViewModel {
     
     func loadNextPage() {
         guard !isLoading else { return }
-        request.page += 1
+        
         onLoadingNextPageStateChange?(true)
+        onErrorGettingNextPage?(nil)
         isLoading = true
+        
         gamesLoader.load(request: request) { [weak self] result in
             guard let self = self else { return }
             self.onLoadingNextPageStateChange?(false)
@@ -65,6 +69,7 @@ final class HomeViewModel {
             switch result {
             case let .success(games):
                 self.onNextPageGamesLoad?(self.map(games: games))
+                self.request.page += 1
             case .failure:
                 self.onErrorGettingNextPage?("Error Fetching next page")
             }
