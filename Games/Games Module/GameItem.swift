@@ -12,9 +12,9 @@ public struct GameItem: Hashable {
     public let title: String
     public let releaseDate: String
     public let rating: Double
-    public let image: URL
+    public let image: URL?
     
-    public init(id: Int, title: String, releaseDate: String, rating: Double, image: URL) {
+    public init(id: Int, title: String, releaseDate: String, rating: Double, image: URL?) {
         self.id = id
         self.title = title
         self.releaseDate = releaseDate
