@@ -146,7 +146,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource, UITabl
     }
     
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cellControllers[indexPath.row].cancelLoad()
+        if cellControllers.indices.contains(indexPath.row) {
+            cellControllers[indexPath.row].cancelLoad()
+        }
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -182,6 +184,8 @@ extension HomeViewController {
         }
     }
 }
+
+
 extension HomeViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 
