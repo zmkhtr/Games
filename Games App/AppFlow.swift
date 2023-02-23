@@ -11,6 +11,7 @@ import CoreData
 import UIKit
 
 final class AppFlow {
+    
     lazy var store: ImageDataStore = {
         try! CoreDataImageDataStore(
             storeURL: NSPersistentContainer
@@ -26,8 +27,8 @@ final class AppFlow {
     }()
     
     private let tabbarController: UITabBarController
-    private var homeNavigationController: UINavigationController?
-    private var favoriteNavigationController: UINavigationController?
+    private var homeNavigationController: UINavigationController!
+    private var favoriteNavigationController: UINavigationController!
     
     init(tabbarController: UITabBarController) {
         self.tabbarController = tabbarController
@@ -43,18 +44,18 @@ final class AppFlow {
     private func createHomeVCWithNavigationController() -> UIViewController {
         let homeVC = HomeUIFactory.create(httpClient: httpClient, imageStore: store)
         homeNavigationController = UINavigationController(rootViewController: homeVC)
-        homeNavigationController?.tabBarItem.title = "Home"
-        homeNavigationController?.tabBarItem.image = UIImage(systemName: "house")
+        homeNavigationController.tabBarItem.title = "Home"
+        homeNavigationController.tabBarItem.image = UIImage(systemName: "house")
         homeVC.navigationItem.title = "Games For You"
-        return homeNavigationController!
+        return homeNavigationController
     }
     
     private func createFavoriteVCWithNavigationController() -> UIViewController {
         let homeVC = HomeUIFactory.create(httpClient: httpClient, imageStore: store)
         favoriteNavigationController = UINavigationController(rootViewController: homeVC)
-        favoriteNavigationController?.tabBarItem.title = "Favorite"
-        favoriteNavigationController?.tabBarItem.image = UIImage(systemName: "heart")
+        favoriteNavigationController.tabBarItem.title = "Favorite"
+        favoriteNavigationController.tabBarItem.image = UIImage(systemName: "heart")
         homeVC.navigationItem.title = "Favorite Games"
-        return favoriteNavigationController!
+        return favoriteNavigationController
     }
 }
