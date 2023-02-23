@@ -55,11 +55,7 @@ class GameCellController {
         
         viewModel.onImageLoadingStateChange = { [weak self] isLoading in
             guard let self = self else { return }
-            if isLoading {
-                self.cell?.viewImageContainer.isShimmering = true
-            } else {
-                self.cell?.viewImageContainer.isShimmering = false
-            }
+            self.cell?.viewImageContainer.isShimmering = isLoading
         }
         
         cell?.onRetry = { [weak self] in

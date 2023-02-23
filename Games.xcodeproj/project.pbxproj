@@ -83,6 +83,9 @@
 		20F60C6929A791C300394EFF /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60C6829A791C300394EFF /* AppFlow.swift */; };
 		20F60C7129A7A96000394EFF /* LoadingFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60C7029A7A96000394EFF /* LoadingFooter.swift */; };
 		20F60C7329A7A97100394EFF /* LoadingFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20F60C7229A7A97100394EFF /* LoadingFooter.xib */; };
+		20F60C7B29A7B86600394EFF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60C7929A7B86600394EFF /* DetailViewController.swift */; };
+		20F60C7C29A7B86600394EFF /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20F60C7A29A7B86600394EFF /* DetailViewController.xib */; };
+		20F60C7E29A7BE2C00394EFF /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60C7D29A7BE2C00394EFF /* DetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -211,6 +214,9 @@
 		20F60C6829A791C300394EFF /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		20F60C7029A7A96000394EFF /* LoadingFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingFooter.swift; sourceTree = "<group>"; };
 		20F60C7229A7A97100394EFF /* LoadingFooter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingFooter.xib; sourceTree = "<group>"; };
+		20F60C7929A7B86600394EFF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		20F60C7A29A7B86600394EFF /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		20F60C7D29A7BE2C00394EFF /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -536,14 +542,15 @@
 			path = GamesTests;
 			sourceTree = "<group>";
 		};
-		20F60C2629A7395400394EFF /* Game ViewController */ = {
+		20F60C2629A7395400394EFF /* Game List Screen */ = {
 			isa = PBXGroup;
 			children = (
+				20F60C7829A7B84800394EFF /* Detail  */,
 				20F60C6F29A7A94000394EFF /* Loading Footer */,
 				20F60C3E29A739D200394EFF /* Home */,
 				20F60C3529A739B000394EFF /* Game Cell */,
 			);
-			path = "Game ViewController";
+			path = "Game List Screen";
 			sourceTree = "<group>";
 		};
 		20F60C3529A739B000394EFF /* Game Cell */ = {
@@ -630,7 +637,7 @@
 		20F60C6729A78D6700394EFF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				20F60C2629A7395400394EFF /* Game ViewController */,
+				20F60C2629A7395400394EFF /* Game List Screen */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -642,6 +649,16 @@
 				20F60C7229A7A97100394EFF /* LoadingFooter.xib */,
 			);
 			path = "Loading Footer";
+			sourceTree = "<group>";
+		};
+		20F60C7829A7B84800394EFF /* Detail  */ = {
+			isa = PBXGroup;
+			children = (
+				20F60C7929A7B86600394EFF /* DetailViewController.swift */,
+				20F60C7A29A7B86600394EFF /* DetailViewController.xib */,
+				20F60C7D29A7BE2C00394EFF /* DetailViewModel.swift */,
+			);
+			path = "Detail ";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -807,6 +824,7 @@
 			files = (
 				2026494029A704AD00347CB5 /* LaunchScreen.storyboard in Resources */,
 				20F60C7329A7A97100394EFF /* LoadingFooter.xib in Resources */,
+				20F60C7C29A7B86600394EFF /* DetailViewController.xib in Resources */,
 				2026493D29A704AD00347CB5 /* Assets.xcassets in Resources */,
 				20F60C3C29A739BE00394EFF /* GameCell.xib in Resources */,
 				20F60C4229A739DA00394EFF /* HomeViewController.xib in Resources */,
@@ -856,8 +874,10 @@
 				20F60C3A29A739BE00394EFF /* GameCellViewModel.swift in Sources */,
 				20F60C4429A739DA00394EFF /* HomeViewModel.swift in Sources */,
 				2026493829A704AB00347CB5 /* ViewController.swift in Sources */,
+				20F60C7E29A7BE2C00394EFF /* DetailViewModel.swift in Sources */,
 				20F60C5E29A78CB900394EFF /* ImageLoaderWithFallBackComposite.swift in Sources */,
 				20F60C6929A791C300394EFF /* AppFlow.swift in Sources */,
+				20F60C7B29A7B86600394EFF /* DetailViewController.swift in Sources */,
 				2026493429A704AB00347CB5 /* AppDelegate.swift in Sources */,
 				20F60C5B29A78C9200394EFF /* AuthenticatedHTTPClientDecorator.swift in Sources */,
 				20F60C4629A739E300394EFF /* UIView+Shimmering.swift in Sources */,

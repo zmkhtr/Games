@@ -59,17 +59,17 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="751" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lQw-9U-ImE">
+                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="751" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="lQw-9U-ImE">
                                 <rect key="frame" x="176.33333333333337" y="0.0" width="141.66666666666663" height="142"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Iris and the Giant" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqh-ct-xB0">
-                                        <rect key="frame" x="0.0" y="0.0" width="141.66666666666666" height="115.66666666666667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="141.66666666666666" height="103.66666666666667"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release date 2018-11-05" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Jo-TR-pbA">
-                                        <rect key="frame" x="0.0" y="115.66666666666667" width="141.66666666666666" height="14.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="109.66666666666667" width="141.66666666666666" height="14.333333333333329"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
