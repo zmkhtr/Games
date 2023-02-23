@@ -144,7 +144,7 @@ class LoadGamesDetailFromRemoteUseCaseTests: XCTestCase {
             "name": "\(title)",
             "released": "\(releaseDate)",
             "rating": rating,
-            "description": description,
+            "description_raw": description,
             "background_image": "\(image.absoluteString)",
             "added_by_status": [
                 "playing": played

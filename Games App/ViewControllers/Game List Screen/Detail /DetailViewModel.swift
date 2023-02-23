@@ -128,7 +128,7 @@ struct GameDetailViewModel {
         self.releaseDate = "Release date \(releaseDate)"
         self.rating = "\(rating)"
         self.description = description
-        self.played = "\(played)"
+        self.played = "\(played) played"
         self.developers = developers
         self.isFavorite = isFavorite
     }

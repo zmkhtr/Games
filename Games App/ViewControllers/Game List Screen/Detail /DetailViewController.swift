@@ -37,7 +37,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         bindViewModel()
         bindViewModelImage()
         bindViewModelFavorite()
@@ -45,8 +45,8 @@ class DetailViewController: UIViewController {
     
     private func favoriteButton(isFavorite: Bool) {
         
-        let heart = UIBarButtonItem(image: UIImage(named: "heart"), style: .plain, target: self, action: #selector(addFavorite))
-        let heartFill = UIBarButtonItem(image: UIImage(named: "heart.fill"), style: .plain, target: self, action: #selector(addFavorite))
+        let heart = UIBarButtonItem(image: UIImage(systemName: "heart"), style: .done, target: self, action: #selector(addFavorite))
+        let heartFill = UIBarButtonItem(image: UIImage(systemName: "heart.fill"), style: .done, target: self, action: #selector(addFavorite))
         
         if isFavorite {
             navigationItem.rightBarButtonItem = heartFill

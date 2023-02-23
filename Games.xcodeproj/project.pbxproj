@@ -87,6 +87,9 @@
 		20F60C7C29A7B86600394EFF /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20F60C7A29A7B86600394EFF /* DetailViewController.xib */; };
 		20F60C7E29A7BE2C00394EFF /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60C7D29A7BE2C00394EFF /* DetailViewModel.swift */; };
 		20F60C8229A7CEBF00394EFF /* DetailUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60C8129A7CEBF00394EFF /* DetailUIComposer.swift */; };
+		20F60C8429A7CFEB00394EFF /* DetailUIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60C8329A7CFEB00394EFF /* DetailUIFactory.swift */; };
+		20F60C8629A7D37400394EFF /* GameDetailLoaderWithCacheDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60C8529A7D37400394EFF /* GameDetailLoaderWithCacheDecorator.swift */; };
+		20F60C8829A7D41F00394EFF /* GameDetailLoaderWithFallbackComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F60C8729A7D41F00394EFF /* GameDetailLoaderWithFallbackComposite.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -219,6 +222,9 @@
 		20F60C7A29A7B86600394EFF /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		20F60C7D29A7BE2C00394EFF /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		20F60C8129A7CEBF00394EFF /* DetailUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUIComposer.swift; sourceTree = "<group>"; };
+		20F60C8329A7CFEB00394EFF /* DetailUIFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUIFactory.swift; sourceTree = "<group>"; };
+		20F60C8529A7D37400394EFF /* GameDetailLoaderWithCacheDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailLoaderWithCacheDecorator.swift; sourceTree = "<group>"; };
+		20F60C8729A7D41F00394EFF /* GameDetailLoaderWithFallbackComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailLoaderWithFallbackComposite.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -597,6 +603,7 @@
 				20F60C5829A78C7800394EFF /* MainQueueDispatchDecorator.swift */,
 				20F60C5A29A78C9200394EFF /* AuthenticatedHTTPClientDecorator.swift */,
 				20F60C5F29A78CD400394EFF /* ImageLoaderWithCacheDecorator.swift */,
+				20F60C8529A7D37400394EFF /* GameDetailLoaderWithCacheDecorator.swift */,
 			);
 			path = Decorator;
 			sourceTree = "<group>";
@@ -605,6 +612,7 @@
 			isa = PBXGroup;
 			children = (
 				20F60C5D29A78CB900394EFF /* ImageLoaderWithFallBackComposite.swift */,
+				20F60C8729A7D41F00394EFF /* GameDetailLoaderWithFallbackComposite.swift */,
 			);
 			path = Composite;
 			sourceTree = "<group>";
@@ -613,6 +621,7 @@
 			isa = PBXGroup;
 			children = (
 				20F60C6229A78D0000394EFF /* HomeUIFactory.swift */,
+				20F60C8329A7CFEB00394EFF /* DetailUIFactory.swift */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -871,9 +880,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				20F60C3B29A739BE00394EFF /* GameCell.swift in Sources */,
+				20F60C8829A7D41F00394EFF /* GameDetailLoaderWithFallbackComposite.swift in Sources */,
 				20F60C3D29A739BE00394EFF /* GameCellController.swift in Sources */,
 				20F60C8229A7CEBF00394EFF /* DetailUIComposer.swift in Sources */,
 				20F60C4E29A7459600394EFF /* HomeUIComposer.swift in Sources */,
+				20F60C8629A7D37400394EFF /* GameDetailLoaderWithCacheDecorator.swift in Sources */,
 				20F60C5929A78C7800394EFF /* MainQueueDispatchDecorator.swift in Sources */,
 				20F60C3A29A739BE00394EFF /* GameCellViewModel.swift in Sources */,
 				20F60C4429A739DA00394EFF /* HomeViewModel.swift in Sources */,
@@ -885,6 +896,7 @@
 				2026493429A704AB00347CB5 /* AppDelegate.swift in Sources */,
 				20F60C5B29A78C9200394EFF /* AuthenticatedHTTPClientDecorator.swift in Sources */,
 				20F60C4629A739E300394EFF /* UIView+Shimmering.swift in Sources */,
+				20F60C8429A7CFEB00394EFF /* DetailUIFactory.swift in Sources */,
 				20F60C4329A739DA00394EFF /* HomeViewController.swift in Sources */,
 				20F60C6329A78D0000394EFF /* HomeUIFactory.swift in Sources */,
 				20F60C6029A78CD400394EFF /* ImageLoaderWithCacheDecorator.swift in Sources */,

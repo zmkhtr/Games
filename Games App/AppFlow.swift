@@ -12,11 +12,18 @@ import UIKit
 
 final class AppFlow {
     
-    lazy var store: ImageDataStore = {
+    lazy var imageStore: ImageDataStore = {
         try! CoreDataImageDataStore(
             storeURL: NSPersistentContainer
                 .defaultDirectoryURL()
                 .appendingPathComponent("image-store.sqlite"))
+    }()
+    
+    lazy var gameStore: CoreDataGameDetailStore = {
+        try! CoreDataGameDetailStore(
+            storeURL: NSPersistentContainer
+                .defaultDirectoryURL()
+                .appendingPathComponent("game-store.sqlite"))
     }()
     
     lazy var httpClient: HTTPClient = {
@@ -24,6 +31,22 @@ final class AppFlow {
         let httpClient = URLSessionHTTPClient(session: session)
         return AuthenticatedHTTPClientDecorator(decoratee: httpClient)
         
+    }()
+    
+    lazy var imageLoader: ImageDataLoader = {
+        let imageCache = LocalImageDataLoader(store: imageStore)
+        let remoteImageLoader = RemoteImageDataLoader(client: httpClient)
+        let imageCacheDecorator = ImageLoaderWithCacheDecorator(
+            decoratee: remoteImageLoader,
+            cache: imageCache)
+        let imageFallback = ImageLoaderWithFallBackComposite(
+            primary: imageCache,
+            fallback: imageCacheDecorator)
+        return imageFallback
+    }()
+    
+    lazy var baseURL: URL = {
+       return URL(string: "https://api.rawg.io/api/games")!
     }()
     
     private let tabbarController: UITabBarController
@@ -42,7 +65,7 @@ final class AppFlow {
     }
     
     private func createHomeVCWithNavigationController() -> UIViewController {
-        let homeVC = HomeUIFactory.create(httpClient: httpClient, imageStore: store, onGameSelected: presentDetail)
+        let homeVC = HomeUIFactory.create(httpClient: httpClient, imageLoader: imageLoader, baseURL: baseURL, onGameSelected: presentDetail)
         homeNavigationController = UINavigationController(rootViewController: homeVC)
         homeNavigationController.tabBarItem.title = "Home"
         homeNavigationController.tabBarItem.image = UIImage(systemName: "house")
@@ -60,6 +83,7 @@ final class AppFlow {
 //    }
     
     private func presentDetail(id: Int) {
-        
+        let detailVC = DetailUIFactory.create(id: id, gameStore: gameStore, imageLoader: imageLoader, httpClient: httpClient, baseURL: baseURL)
+        homeNavigationController.pushViewController(detailVC, animated: true)
     }
 }
