@@ -30,32 +30,36 @@ final class HomeViewModel {
     var onErrorGettingNextPage: Observer<String?>?
     var onNextPageGamesLoad: Observer<[GameCellController]>?
 
+    private var isLoading = false
+    
     func loadGames(query: String? = nil) {
         request = GamesRequest(page: 1, page_size: 20, search: query)
         
         onLoadingStateChange?(true)
+        isLoading = true
         gamesLoader.load(request: request) { [weak self] result in
             guard let self = self else { return }
             self.onLoadingStateChange?(false)
+            self.isLoading = false
 
             switch result {
             case let .success(games):
                 self.onGamesLoad?(self.map(games: games))
-            case let .failure(error):
-                print("Error \(error)")
+            case .failure:
                 self.onErrorStateChange?("Error Fetching Data")
             }
         }
     }
     
     func loadNextPage() {
+        guard !isLoading else { return }
         request.page += 1
-        
         onLoadingNextPageStateChange?(true)
+        isLoading = true
         gamesLoader.load(request: request) { [weak self] result in
             guard let self = self else { return }
             self.onLoadingNextPageStateChange?(false)
-
+            self.isLoading = false
             switch result {
             case let .success(games):
                 self.onNextPageGamesLoad?(self.map(games: games))
