@@ -41,6 +41,9 @@
 		20212F9329A6D078000000F5 /* CDGameDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20212F9229A6D078000000F5 /* CDGameDetail.swift */; };
 		20212F9629A6D2F7000000F5 /* CoreDataGameDetailStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20212F9529A6D2F7000000F5 /* CoreDataGameDetailStoreTests.swift */; };
 		20212F9B29A6EF4F000000F5 /* AllGamesDetailLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20212F9A29A6EF4F000000F5 /* AllGamesDetailLoader.swift */; };
+		20212F9E29A6F39A000000F5 /* ImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20212F9D29A6F39A000000F5 /* ImageDataLoader.swift */; };
+		20212FA029A6F3B1000000F5 /* LocalImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20212F9F29A6F3B1000000F5 /* LocalImageData.swift */; };
+		20212FA229A6F3CE000000F5 /* ImageDataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20212FA129A6F3CE000000F5 /* ImageDataCache.swift */; };
 		2045F91729A46A0E009E17B5 /* Games.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2045F90C29A46A0E009E17B5 /* Games.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +93,9 @@
 		20212F9229A6D078000000F5 /* CDGameDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDGameDetail.swift; sourceTree = "<group>"; };
 		20212F9529A6D2F7000000F5 /* CoreDataGameDetailStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataGameDetailStoreTests.swift; sourceTree = "<group>"; };
 		20212F9A29A6EF4F000000F5 /* AllGamesDetailLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGamesDetailLoader.swift; sourceTree = "<group>"; };
+		20212F9D29A6F39A000000F5 /* ImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataLoader.swift; sourceTree = "<group>"; };
+		20212F9F29A6F3B1000000F5 /* LocalImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalImageData.swift; sourceTree = "<group>"; };
+		20212FA129A6F3CE000000F5 /* ImageDataCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataCache.swift; sourceTree = "<group>"; };
 		2045F90C29A46A0E009E17B5 /* Games.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Games.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2045F91629A46A0E009E17B5 /* GamesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GamesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -243,6 +249,16 @@
 			path = Features;
 			sourceTree = "<group>";
 		};
+		20212F9C29A6F36D000000F5 /* Image Module */ = {
+			isa = PBXGroup;
+			children = (
+				20212F9D29A6F39A000000F5 /* ImageDataLoader.swift */,
+				20212F9F29A6F3B1000000F5 /* LocalImageData.swift */,
+				20212FA129A6F3CE000000F5 /* ImageDataCache.swift */,
+			);
+			path = "Image Module";
+			sourceTree = "<group>";
+		};
 		2045F90229A46A0E009E17B5 = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +281,7 @@
 		2045F90E29A46A0E009E17B5 /* Games */ = {
 			isa = PBXGroup;
 			children = (
+				20212F9C29A6F36D000000F5 /* Image Module */,
 				20212F6929A5FAC3000000F5 /* Game Detail Module */,
 				20212F4829A5C36B000000F5 /* Games Module */,
 				20212F3A29A5BEFA000000F5 /* HTTPClient Module */,
@@ -396,6 +413,7 @@
 				20212F6829A5F85A000000F5 /* RemoteGamesLoader.swift in Sources */,
 				20212F6C29A5FADF000000F5 /* GameDetailLoader.swift in Sources */,
 				20212F6E29A5FAE9000000F5 /* GameDetailItem.swift in Sources */,
+				20212FA029A6F3B1000000F5 /* LocalImageData.swift in Sources */,
 				20212F8029A615CD000000F5 /* GameDetailCache.swift in Sources */,
 				20212F3C29A5BF0D000000F5 /* HTTPClient.swift in Sources */,
 				20212F4429A5BFF1000000F5 /* URLSessionHTTPClient.swift in Sources */,
@@ -411,7 +429,9 @@
 				20212F7729A5FEBA000000F5 /* GameDetailItemsMapper.swift in Sources */,
 				20212F7229A5FD88000000F5 /* GameDetailEndpoint.swift in Sources */,
 				20212F9B29A6EF4F000000F5 /* AllGamesDetailLoader.swift in Sources */,
+				20212F9E29A6F39A000000F5 /* ImageDataLoader.swift in Sources */,
 				20212F7B29A606E5000000F5 /* RemoteGameDetailLoader.swift in Sources */,
+				20212FA229A6F3CE000000F5 /* ImageDataCache.swift in Sources */,
 				20212F9329A6D078000000F5 /* CDGameDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
