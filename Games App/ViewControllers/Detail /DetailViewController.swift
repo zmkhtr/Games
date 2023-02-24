@@ -45,14 +45,14 @@ class DetailViewController: UIViewController {
     }
     
     private func favoriteButton(isFavorite: Bool) {
-        
-        let heart = UIBarButtonItem(image: UIImage(systemName: "heart"), style: .done, target: self, action: #selector(addFavorite))
-        let heartFill = UIBarButtonItem(image: UIImage(systemName: "heart.fill"), style: .done, target: self, action: #selector(addFavorite))
-        
+        let image = isFavorite ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
+        let barButton = UIBarButtonItem(image: image, style: .done, target: self, action: #selector(addFavorite))
+        barButton.accessibilityIdentifier = "game-favorite-button"
+
         if isFavorite {
-            navigationItem.rightBarButtonItem = heartFill
+            navigationItem.rightBarButtonItem = barButton
         } else {
-            navigationItem.rightBarButtonItem = heart
+            navigationItem.rightBarButtonItem = barButton
         }
     }
     

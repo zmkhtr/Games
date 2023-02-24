@@ -25,6 +25,7 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fu2-ak-3RD">
                                         <rect key="frame" x="0.0" y="0.0" width="168.33333333333334" height="142"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="game-image-view"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="8"/>
@@ -110,6 +111,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <accessibility key="accessibilityConfiguration" identifier="game-item-cell"/>
             <connections>
                 <outlet property="buttonRetryImage" destination="QjE-dP-PNE" id="Qc6-6M-8Qz"/>
                 <outlet property="imageGame" destination="fu2-ak-3RD" id="qPJ-5n-YC3"/>

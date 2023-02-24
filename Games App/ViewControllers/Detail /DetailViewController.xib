@@ -113,6 +113,7 @@
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GxY-9t-xAB">
                                             <rect key="frame" x="0.0" y="0.0" width="402" height="300"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="game-detail-image"/>
                                         </imageView>
                                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTX-c0-jTy">
                                             <rect key="frame" x="0.0" y="0.0" width="402" height="300"/>
@@ -136,6 +137,7 @@
                                 </view>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <accessibility key="accessibilityConfiguration" identifier="game-detail-view"/>
                             <constraints>
                                 <constraint firstItem="Ut6-Ub-DbP" firstAttribute="top" secondItem="Trv-kI-gge" secondAttribute="top" id="25J-Xl-QrY"/>
                                 <constraint firstItem="VCE-0n-Alc" firstAttribute="top" secondItem="Ut6-Ub-DbP" secondAttribute="bottom" constant="16" id="Trn-mN-dYD"/>

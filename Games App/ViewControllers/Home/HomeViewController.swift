@@ -60,7 +60,11 @@ final public class HomeViewController: UIViewController {
     private func setUpSearchController() {
         let search = UISearchController(searchResultsController: nil)
         search.searchBar.delegate = self
+        search.searchBar.accessibilityIdentifier = "search-bar"
+        search.searchBar.accessibilityLabel = "search-bar"
         search.delegate = self
+        
+        search.accessibilityLabel = "SearchView"
         self.navigationItem.searchController = search
         self.navigationItem.hidesSearchBarWhenScrolling = false
     }
