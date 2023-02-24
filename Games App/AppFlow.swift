@@ -46,7 +46,8 @@ final class AppFlow {
     }()
     
     lazy var baseURL: URL = {
-       return URL(string: "https://api.rawg.io/api/games")!
+        let urlString = Bundle.main.infoDictionary! ["API_BASE_URL"] as! String
+        return URL(string: urlString)!
     }()
     
     private let tabbarController: UITabBarController

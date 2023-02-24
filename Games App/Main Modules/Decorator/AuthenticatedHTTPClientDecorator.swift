@@ -22,8 +22,9 @@ class AuthenticatedHTTPClientDecorator: HTTPClient {
     
     private func enrich(_ request: URLRequest) -> URLRequest {
         var request = request
+        let key = Bundle.main.infoDictionary! ["API_KEY"] as! String
         request.url?.append(queryItems: [
-            URLQueryItem(name: "key", value: "375107cb63db476a86598ff9936da3c4")
+            URLQueryItem(name: "key", value: key)
         ])
     
         return request
