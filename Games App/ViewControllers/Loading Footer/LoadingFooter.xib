@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LoadingFooter" customModule="Games_App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gzr-ZN-uvB">
+                    <rect key="frame" x="0.0" y="59" width="393" height="100"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="2zG-bW-iRZ">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
+                        </activityIndicatorView>
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Failed get next page Pull to top to Retry" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BEu-2y-oGS">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" systemColor="systemRedColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="BEu-2y-oGS" firstAttribute="top" secondItem="gzr-ZN-uvB" secondAttribute="top" id="7Zj-Mj-5Xv"/>
+                        <constraint firstAttribute="height" constant="100" id="Foa-Gy-gv1"/>
+                        <constraint firstItem="2zG-bW-iRZ" firstAttribute="top" secondItem="gzr-ZN-uvB" secondAttribute="top" id="OId-9Q-ImF"/>
+                        <constraint firstAttribute="bottom" secondItem="2zG-bW-iRZ" secondAttribute="bottom" id="On6-FS-Uhq"/>
+                        <constraint firstItem="2zG-bW-iRZ" firstAttribute="leading" secondItem="gzr-ZN-uvB" secondAttribute="leading" id="P53-PX-syQ"/>
+                        <constraint firstAttribute="trailing" secondItem="2zG-bW-iRZ" secondAttribute="trailing" id="bLk-zn-Ogx"/>
+                        <constraint firstAttribute="bottom" secondItem="BEu-2y-oGS" secondAttribute="bottom" id="doE-U4-GbN"/>
+                        <constraint firstItem="BEu-2y-oGS" firstAttribute="leading" secondItem="gzr-ZN-uvB" secondAttribute="leading" id="hRb-wE-Z92"/>
+                        <constraint firstAttribute="trailing" secondItem="BEu-2y-oGS" secondAttribute="trailing" id="kti-3B-NQl"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="gzr-ZN-uvB" secondAttribute="trailing" id="2CX-Nk-Thq"/>
+                <constraint firstItem="gzr-ZN-uvB" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="EDN-M0-pzS"/>
+                <constraint firstItem="gzr-ZN-uvB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="WHI-Ve-2cS"/>
+            </constraints>
+            <connections>
+                <outlet property="activityLoading" destination="2zG-bW-iRZ" id="QZF-ZU-X1V"/>
+                <outlet property="labelError" destination="BEu-2y-oGS" id="tJc-cC-Qym"/>
+            </connections>
+            <point key="canvasLocation" x="14.503816793893129" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

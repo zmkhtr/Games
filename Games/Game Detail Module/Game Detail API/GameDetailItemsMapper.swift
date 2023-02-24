@@ -12,12 +12,12 @@ public final class GameDetailItemsMapper {
     private struct Root: Decodable {
         let id: Int
         let name: String
-        let description: String
+        let description_raw: String
         let rating: Double
-        let released: String
+        let released: String?
         let added_by_status: AddedByStatus
         let developers: [Developer]
-        let background_image: URL
+        let background_image: URL?
         
         struct AddedByStatus: Decodable {
             let playing: Int
@@ -31,10 +31,10 @@ public final class GameDetailItemsMapper {
            GameDetailItem(
             id: id,
             title: name,
-            releaseDate: released,
+            releaseDate: released ?? "Unknown",
             rating: rating,
             image: background_image,
-            description: description,
+            description: description_raw,
             played: added_by_status.playing,
             developers: developers.first?.name ?? "Unknown",
             isFavorite: false)

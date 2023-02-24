@@ -12,13 +12,13 @@ public struct GameDetailItem: Hashable {
     public let title: String
     public let releaseDate: String
     public let rating: Double
-    public let image: URL
+    public let image: URL?
     public let description: String
     public let played: Int
     public let developers: String
-    public let isFavorite: Bool
+    public var isFavorite: Bool
     
-    public init(id: Int, title: String, releaseDate: String, rating: Double, image: URL, description: String, played: Int, developers: String, isFavorite: Bool) {
+    public init(id: Int, title: String, releaseDate: String, rating: Double, image: URL?, description: String, played: Int, developers: String, isFavorite: Bool) {
         self.id = id
         self.title = title
         self.releaseDate = releaseDate

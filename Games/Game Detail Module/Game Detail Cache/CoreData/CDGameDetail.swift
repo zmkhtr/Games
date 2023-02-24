@@ -14,7 +14,7 @@ class CDGameDetail: NSManagedObject {
     @NSManaged var title: String
     @NSManaged var releaseDate: String
     @NSManaged var rating: Double
-    @NSManaged var image: URL
+    @NSManaged var image: URL?
     @NSManaged var gameDescription: String
     @NSManaged var played: Int
     @NSManaged var developers: String

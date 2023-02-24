@@ -14,8 +14,8 @@ public final class GamesItemsMapper {
         
         struct Result: Decodable {
             let name: String
-            let released: String
-            let background_image: URL
+            let released: String?
+            let background_image: URL?
             let rating: Double
             let id: Int
         }
@@ -25,7 +25,7 @@ public final class GamesItemsMapper {
                 GameItem(
                     id: result.id,
                     title: result.name,
-                    releaseDate: result.released,
+                    releaseDate: result.released ?? "Unknown",
                     rating: result.rating,
                     image: result.background_image)
             }
