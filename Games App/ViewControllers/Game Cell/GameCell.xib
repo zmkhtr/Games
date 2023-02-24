@@ -31,13 +31,13 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QjE-dP-PNE">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QjE-dP-PNE">
                                         <rect key="frame" x="0.0" y="0.0" width="168.33333333333334" height="142"/>
                                         <color key="tintColor" systemColor="systemBackgroundColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="arrow.clockwise" catalog="system"/>
                                         <connections>
-                                            <action selector="retryAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="7kJ-JD-j9a"/>
+                                            <action selector="retryAction" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qIu-p1-GKx"/>
                                         </connections>
                                     </button>
                                 </subviews>

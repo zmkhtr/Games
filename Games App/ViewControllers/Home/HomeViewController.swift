@@ -8,12 +8,12 @@
 import UIKit
 import Games
 
-final class HomeViewController: UIViewController {
+final public class HomeViewController: UIViewController {
     
     private let viewModel: HomeViewModel
     private var cellControllers: [GameCellController] = []
     
-    private lazy var refreshControl: UIRefreshControl = {
+    public lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl(frame: .zero)
         refreshControl.addTarget(self, action: #selector(self.refresh), for: .valueChanged)
         refreshControl.tintColor = .black
@@ -27,8 +27,8 @@ final class HomeViewController: UIViewController {
         return footer
     }()
     
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var retryButton: UIButton!
+    @IBOutlet private(set) public weak var tableView: UITableView!
+    @IBOutlet private(set) public weak var retryButton: UIButton!
     
     private let onGameSelected: ((Int) -> Void)
     
@@ -44,7 +44,7 @@ final class HomeViewController: UIViewController {
         fatalError("init(coder:) has not been implemented, You should't initialize the ViewController through Storyboards")
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
       
         setupView()
@@ -164,37 +164,37 @@ extension HomeViewController {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cellControllers.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return cellControllers[indexPath.row].view(in: tableView, for: indexPath)
     }
     
-    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if cellControllers.indices.contains(indexPath.row) {
             cellControllers[indexPath.row].cancelLoad()
         }
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cellControllers[indexPath.row].preload()
     }
     
-    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+    public func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         indexPaths.forEach { indexPath in
             cellControllers[indexPath.row].preload()
         }
     }
     
-    func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
+    public func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
         indexPaths.forEach { indexPath in
             cellControllers[indexPath.row].cancelLoad()
         }
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let id = cellControllers[indexPath.row].getItem().id
         onGameSelected(id)
     }
@@ -202,7 +202,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource, UITabl
 
 
 extension HomeViewController {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard scrollView.isDragging && !cellControllers.isEmpty else { return }
         
         let offsetY = scrollView.contentOffset.y
@@ -215,7 +215,7 @@ extension HomeViewController {
 
 
 extension HomeViewController: UISearchBarDelegate, UISearchControllerDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 
         NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(HomeViewController.searchQuery), object: nil)
            self.perform(#selector(HomeViewController.searchQuery), with: nil, afterDelay: 0.5)
@@ -229,7 +229,7 @@ extension HomeViewController: UISearchBarDelegate, UISearchControllerDelegate {
         viewModel.loadGames(query: query)
     }
     
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    public func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         cellControllers.removeAll()
         tableView.reloadData()
         viewModel.loadGames()

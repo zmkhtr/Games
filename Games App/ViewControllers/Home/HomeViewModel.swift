@@ -8,7 +8,7 @@
 import Foundation
 import Games
 
-final class HomeViewModel {
+final public class HomeViewModel {
     typealias Observer<T> = (T) -> Void
 
     private let gamesLoader: GamesLoader

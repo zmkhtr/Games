@@ -28,7 +28,8 @@ class GameCellController {
         cell?.labelTitle.text = viewModel.title
         cell?.labelReleaseDate.text = viewModel.relaseDate
         cell?.labelRating.text = viewModel.rating
-        
+        cell?.viewImageContainer.isShimmering = true
+
         viewModel.onImageLoad = { [weak self] image in
             guard let self = self else { return }
 

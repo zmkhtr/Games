@@ -7,23 +7,23 @@
 
 import UIKit
 
-class GameCell: UITableViewCell {
+public class GameCell: UITableViewCell {
 
-    @IBOutlet weak var buttonRetryImage: UIButton!
-    @IBOutlet weak var viewImageContainer: UIView!
-    @IBOutlet weak var labelRating: UILabel!
-    @IBOutlet weak var labelTitle: UILabel!
-    @IBOutlet weak var labelReleaseDate: UILabel!
-    @IBOutlet weak var imageGame: UIImageView!
+    @IBOutlet private(set) public weak var buttonRetryImage: UIButton!
+    @IBOutlet private(set) public weak var viewImageContainer: UIView!
+    @IBOutlet private(set) public weak var labelRating: UILabel!
+    @IBOutlet private(set) public weak var labelTitle: UILabel!
+    @IBOutlet private(set) public weak var labelReleaseDate: UILabel!
+    @IBOutlet private(set) public weak var imageGame: UIImageView!
     
     var onRetry: (() -> Void)?
     var onReuse: (() -> Void)?
     
-    @IBAction func retryAction(_ sender: UIButton) {
+    @IBAction private func retryAction() {
         onRetry?()
     }
     
-    override func prepareForReuse() {
+    public override func prepareForReuse() {
         super.prepareForReuse()
         
         onReuse?()

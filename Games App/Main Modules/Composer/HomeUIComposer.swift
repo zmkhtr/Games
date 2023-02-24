@@ -8,7 +8,7 @@
 import Foundation
 import Games
 
-final class HomeUIComposer {
+final public class HomeUIComposer {
     private init() {}
     
     public static func homeComposedWith(
@@ -21,7 +21,9 @@ final class HomeUIComposer {
             gamesLoader: MainQueueDispatchDecorator(decoratee: gamesLoader),
             imageLoader: MainQueueDispatchDecorator(decoratee: imageLoader))
                 
-        return HomeViewController(viewModel: viewModel, onGameSelected: onGameSelected)
+        let homeVC = HomeViewController(viewModel: viewModel, onGameSelected: onGameSelected)
+        homeVC.title = "Games For You"
+        return homeVC
     }
 }
 
